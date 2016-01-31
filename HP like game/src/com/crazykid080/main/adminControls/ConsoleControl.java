@@ -21,7 +21,7 @@ public class ConsoleControl{
 	public static void write(String text, LogLevels level){
 		System.out.println(text);
 		for (Object object : consoles) {
-			((AdminConsole)object).write(text + "\n");
+			((AdminConsole)object).write(text + "\n", level);
 		}
 	}
 }

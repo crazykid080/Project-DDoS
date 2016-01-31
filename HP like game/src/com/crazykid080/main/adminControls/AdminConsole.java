@@ -2,6 +2,8 @@ package com.crazykid080.main.adminControls;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,7 +34,7 @@ public class AdminConsole extends JFrame {
 
 
 		buttonDone.addActionListener(e -> buttonDoneClick());
-		
+
 		buttonClear.addActionListener(e -> buttonClearClick());
 
 		panel1.add(textArea1);
@@ -40,10 +42,24 @@ public class AdminConsole extends JFrame {
 		panel2.add(field1);
 		panel2.add(buttonClear);
 		panel2.add(buttonDone);
-		
+
 		Dimension field = new Dimension(200, 25);
-		
+
+		KeyListener keyListener = new KeyListener() {
+			public void keyPressed(KeyEvent keyEvent) {
+				//keyPressAction(keyEvent);
+			}
+			public void keyReleased(KeyEvent keyEvent) {
+				keyPressAction(keyEvent);
+			}
+			public void keyTyped(KeyEvent keyEvent) {
+				//keyPressAction(keyEvent);
+			}
+		};
+
 		field1.setPreferredSize(field);
+		field1.setFocusable(true);
+		field1.addKeyListener(keyListener);
 		
 		Dimension area = new Dimension(375, 300);
 		textArea1.setPreferredSize(area);
@@ -53,14 +69,14 @@ public class AdminConsole extends JFrame {
 
 		this.add(panel2, BorderLayout.SOUTH);
 		panel2.setVisible(true);
-		
+
 		Dimension d = new Dimension(400, 400);
 		this.setPreferredSize(d);
-		
+
 		ConsoleControl.registerConsole(this);
 
 		this.pack();
-		ConsoleControl.write("Console initialized.");
+		ConsoleControl.write("Console initialized.", LogLevels.Info);
 	}
 	private void buttonClearClick() {
 		field1.setText("");
@@ -71,20 +87,43 @@ public class AdminConsole extends JFrame {
 		AdminCommandController.runCommand(consoleIn);
 		field1.setText("");
 	}
-
-
 	public void write(String text){
 		consoleOut = textArea1.getText() + text;
 		textArea1.setText(consoleOut);
 	}
 	
+	private void keyPressAction(KeyEvent key){
+		if(key.getKeyChar() == KeyEvent.VK_ENTER){
+			buttonDoneClick();
+		}
+	}
+	
 	/**
 	 * @author Crazykid080
-	 * @deprecated Currently, my limited knowledge prevents me from using this as intended.
+	 * 
 	 * @param text The message you wish to send
 	 * @param type The alert level the message will be.
 	 */
 	public void write(String text, LogLevels type){
-		
+		String level = "ISSUE!!!";
+		switch(type){
+		case Info:
+			level = "[Info]";
+			break;
+		case CRITICAL:
+			level = "[***CRITICAL***]";
+			break;
+		case Error:
+			level = "[*Error*]";
+			break;
+		case Warning:
+			level = "[Warning!]";
+			break;
+		default:
+			level = "ISSUE!!!";
+			break;
+		}
+		consoleOut = textArea1.getText() + level + " " + text;
+		textArea1.setText(consoleOut);
 	}
 }

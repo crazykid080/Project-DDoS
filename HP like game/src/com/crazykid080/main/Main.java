@@ -2,6 +2,7 @@ package com.crazykid080.main;
 
 import com.crazykid080.main.adminControls.AdminConsole;
 import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.threads.BurnoutTimer;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
 	}
 	
 	public static void notAdded(){
-		ConsoleControl.write("This is something that hasn't been implemented, sorry!");
+		ConsoleControl.write("This is something that hasn't been implemented, sorry!", LogLevels.Warning);
 	}
 
 }

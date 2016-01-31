@@ -7,8 +7,8 @@ import com.crazykid080.main.Server;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.processes.ProcessTypes;
 
-public abstract class AdminCommandController implements AdminCommands{
-	
+public abstract class AdminCommandController{
+
 	protected static String commandList = "edit [faction] treasury {add,set,remove}"
 			+ " [amount]"
 			+ "\n edit stock {price, interest} {add,set,subtract}"
@@ -22,9 +22,9 @@ public abstract class AdminCommandController implements AdminCommands{
 	public static void runCommand(String command){		
 
 		if(command.contains("edit")){
-			
+
 			if(command.contains("treasury")){
-				
+
 				if(command.contains("add") && command.contains("treasury add")){
 					Main.notAdded();
 					return;
@@ -36,27 +36,31 @@ public abstract class AdminCommandController implements AdminCommands{
 					Main.notAdded();
 					return;
 				}
-				
+
 			}else if(command.contains("server") && command.contains("edit server")){
 				if(command.contains("new") && command.contains("edit server new")){
-					String s = command.substring(16, 17);
-					ConsoleControl.write(s);
-					byte b = -1;
-					if(s.contains("1")){
-						b = 1;
-					}else if(s.contains("2")){
-						b = 2;
-					}else if(s.contains("3")){
-						b = 3;
-					}else if(s.contains("4")){
-						b = 4;
-					}else{
-						ConsoleControl.write("ERROR: Server type: " + s + " does not"
-								+ " exist!");
+					try{
+						String s = command.substring(16, 17);
+						ConsoleControl.write(s);
+						byte b = -1;
+						if(s.contains("1")){
+							b = 1;
+						}else if(s.contains("2")){
+							b = 2;
+						}else if(s.contains("3")){
+							b = 3;
+						}else if(s.contains("4")){
+							b = 4;
+						}else{
+							ConsoleControl.write("ERROR: Server type: " + s + " does not"
+									+ " exist!");
+							return;
+						}
+						serverNew(b);
 						return;
+					}catch(Exception e){
+						ConsoleControl.write("ERROR: " + e, LogLevels.Error);
 					}
-					serverNew(b);
-					return;
 				}
 			}
 
@@ -78,7 +82,7 @@ public abstract class AdminCommandController implements AdminCommands{
 					return;
 				}
 			}
-			
+
 		}else if(command.contains("help")){
 			ConsoleControl.write(commandList);
 			return;
@@ -88,55 +92,54 @@ public abstract class AdminCommandController implements AdminCommands{
 		ConsoleControl.write("ERROR: command doesnt seem to be vaild!");
 	}
 
-	@Override
 	public void editTreasuryAdd(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editTreasureRemove(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editTreasurySet(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockPriceAdd(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockPriceSubtract(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockPriceSet(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockInterestAdd(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockInterestSubtract(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void editStockInterestSet(byte faction, double amount) {
 		// TODO Auto-generated method stub
 
@@ -151,55 +154,55 @@ public abstract class AdminCommandController implements AdminCommands{
 
 	}
 
-	@Override
+
 	public void serverProgramAdd(String IP, ProcessTypes type, double vers) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void serverProgramRemove(String IP, ProcessTypes type, double vers) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void userBan(String name) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void userNew(String name) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
+
 	public void serverGetIPAll() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
+
 	public void serverGetFiles(String IP) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
+
 	public void serverGetProcesses(String IP) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	@Override
+
 	public void serverGetDrivers(String IP) {
 		// TODO Auto-generated method stub
-		
+
 	}
 	public static void exit() {
 		System.exit(1);
 	}
-	
+
 }
