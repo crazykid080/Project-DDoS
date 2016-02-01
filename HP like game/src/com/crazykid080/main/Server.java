@@ -9,7 +9,8 @@ public class Server {
 	protected ArrayList<Object> Drivers = new ArrayList<>();
 	protected ArrayList<Object> Processes = new ArrayList<>();
 	protected ArrayList<Object> Files = new ArrayList<>();
-	protected String IPAddress = "ERROR!!!!!!";
+	protected String I POSTA ME = "ERROR!!!!!";
+ 	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
 	public Server(int i){
 		//TODO: Implement this fully, as of right now, this doesnt not change anything!
