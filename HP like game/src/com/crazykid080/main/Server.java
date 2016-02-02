@@ -9,11 +9,11 @@ public class Server {
 	protected ArrayList<Object> Drivers = new ArrayList<>();
 	protected ArrayList<Object> Processes = new ArrayList<>();
 	protected ArrayList<Object> Files = new ArrayList<>();
-	protected String I POSTA ME = "ERROR!!!!!";
+	protected String IPListName = "ERROR!!!!!";
  	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
 	public Server(int i){
-		//TODO: Implement this fully, as of right now, this doesnt not change anything!
+		//TODO: Implement this fully, as of right now, this doesn't not change anything!
 		switch(i){
 		case 1:
 			ServerType = "Private";
