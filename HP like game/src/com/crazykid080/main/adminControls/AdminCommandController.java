@@ -7,7 +7,7 @@ import com.crazykid080.main.Server;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.processes.ProcessTypes;
 
-public abstract class AdminCommandController{
+public class AdminCommandController{
 
 	protected static String commandList = "edit [faction] treasury {add,set,remove}"
 			+ " [amount]"
@@ -192,8 +192,8 @@ public abstract class AdminCommandController{
 
 
 	public void serverGetIPAll() {
-		// TODO Auto-generated method stub
-
+		ArrayList<String> IPs = IPController.getIPAddresses();
+		//TODO: insert for loop here!
 	}
 
 
