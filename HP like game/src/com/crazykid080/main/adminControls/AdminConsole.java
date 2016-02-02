@@ -63,6 +63,7 @@ public class AdminConsole extends JFrame {
 		
 		Dimension area = new Dimension(375, 300);
 		textArea1.setPreferredSize(area);
+		textArea1.setEditable(false);
 
 		this.add(panel1, BorderLayout.NORTH);
 		panel1.setVisible(true);
@@ -100,7 +101,6 @@ public class AdminConsole extends JFrame {
 	
 	/**
 	 * @author Crazykid080
-	 * 
 	 * @param text The message you wish to send
 	 * @param type The alert level the message will be.
 	 */
@@ -123,7 +123,7 @@ public class AdminConsole extends JFrame {
 			level = "ISSUE!!!";
 			break;
 		}
-		consoleOut = textArea1.getText() + level + " " + text;
+		consoleOut = textArea1.getText() + level + " " + text + "\n";
 		textArea1.setText(consoleOut);
 	}
 }

@@ -11,13 +11,21 @@ public abstract class AdminCommandController{
 
 	protected static String commandList = "edit [faction] treasury {add,set,remove}"
 			+ " [amount]"
-			+ "\n edit stock {price, interest} {add,set,subtract}"
-			+ "\n edit server new [server type] (IP address)"
-			+ "\n edit server [IP address] program {add,remove} [process type] [process "
+			+ "\nedit stock {price, interest} {add,set,subtract}"
+			+ "\nedit server new [server type] (IP address)"
+			+ "\nedit server [IP address] program {add,remove} [process type] [process "
 			+ "version]"
-			+ "\n server get {files,processes,drivers} [IP address]"
-			+ "\n server get ip all"
-			+ "\n user {ban,new} [username]";
+			+ "\nserver get {files,processes,drivers} [IP address]"
+			+ "\nserver get ip all"
+			+ "\nuser {ban,new} [username]";
+	protected static String editCommands = "edit [faction] treasury {add,set,remove}"
+			+ "[amount]"
+			+ "\nedit stock {price, interest} {add,set,subtract}"
+			+ "\nedit server new [server type] (IP address)"
+			+ "\nedit server [IP address] program {add,remove} [process type] "
+			+ "[process version]";
+	protected static String serverCommands = "server get {files,processes,drivers} [IP address]"
+			+ "\nserver get ip all";
 
 	public static void runCommand(String command){		
 
@@ -63,7 +71,8 @@ public abstract class AdminCommandController{
 					}
 				}
 			}
-
+			ConsoleControl.write("You typed edit, but did not add anything else. \n"
+					+ "Did you mean any of these:\n" + editCommands);
 		}else if(command.contains("user")){
 			if(command.contains("ban") && command.contains("user ban")){
 				Main.notAdded();
@@ -82,14 +91,15 @@ public abstract class AdminCommandController{
 					return;
 				}
 			}
-
+			ConsoleControl.write("You typed server, but did not add anything else. \n"
+					+ "did you mean any of these:\n" + serverCommands);
 		}else if(command.contains("help")){
 			ConsoleControl.write(commandList);
 			return;
 		}else if(command.contains("exit")){
 			exit();
 		}
-		ConsoleControl.write("ERROR: command doesnt seem to be vaild!");
+		//ConsoleControl.write("ERROR: command doesn't seem to be valid!");
 	}
 
 	public void editTreasuryAdd(byte faction, double amount) {
