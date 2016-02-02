@@ -67,15 +67,19 @@ public class Server {
 		switch(f){
 		case 1:
 			//faction 1
+			//String IPListName = ServerType + " " + faction + " Server";
 			break;
 		case 2:
 			//faction 2
+ 			//String IPListName = ServerType + " " + faction + " Server";
 			break;
 		case 3:
 			//faction 3
+			//String IPListName = ServerType + " " + faction + " Server";
 			break;
 		case 4:
 			//faction 4
+			//String IPListName = ServerType + " " + faction + " Server";
 			break;
 		default:
 			ConsoleControl.write("ERROR: something went wrong with setting the faction!" , LogLevels.Error);
