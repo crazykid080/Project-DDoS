@@ -49,7 +49,7 @@ public abstract class AdminCommandController{
 				if(command.contains("new") && command.contains("edit server new")){
 					try{
 						String s = command.substring(16, 17);
-						ConsoleControl.write(s);
+						//ConsoleControl.write(s);
 						byte b = -1;
 						if(s.contains("1")){
 							b = 1;
@@ -73,6 +73,7 @@ public abstract class AdminCommandController{
 			}
 			ConsoleControl.write("You typed edit, but did not add anything else. \n"
 					+ "Did you mean any of these:\n" + editCommands);
+			return;
 		}else if(command.contains("user")){
 			if(command.contains("ban") && command.contains("user ban")){
 				Main.notAdded();
@@ -93,13 +94,14 @@ public abstract class AdminCommandController{
 			}
 			ConsoleControl.write("You typed server, but did not add anything else. \n"
 					+ "did you mean any of these:\n" + serverCommands);
+			return;
 		}else if(command.contains("help")){
 			ConsoleControl.write(commandList);
 			return;
 		}else if(command.contains("exit")){
 			exit();
 		}
-		//ConsoleControl.write("ERROR: command doesn't seem to be valid!");
+		ConsoleControl.write("ERROR: command doesn't seem to be valid!");
 	}
 
 	public void editTreasuryAdd(byte faction, double amount) {

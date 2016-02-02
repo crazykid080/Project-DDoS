@@ -89,7 +89,7 @@ public class AdminConsole extends JFrame {
 		field1.setText("");
 	}
 	public void write(String text){
-		consoleOut = textArea1.getText() + text;
+		consoleOut = textArea1.getText() + "\n" + text + "\n";
 		textArea1.setText(consoleOut);
 	}
 	
@@ -123,7 +123,7 @@ public class AdminConsole extends JFrame {
 			level = "ISSUE!!!";
 			break;
 		}
-		consoleOut = textArea1.getText() + level + " " + text + "\n";
+		consoleOut = textArea1.getText() + "\n" + level + " " + text + "\n";
 		textArea1.setText(consoleOut);
 	}
 }
