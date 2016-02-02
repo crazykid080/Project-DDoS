@@ -63,6 +63,7 @@ public class AdminConsole extends JFrame {
 		
 		Dimension area = new Dimension(375, 300);
 		textArea1.setPreferredSize(area);
+		textArea1.setLineWrap(true);
 		textArea1.setEditable(false);
 
 		this.add(panel1, BorderLayout.NORTH);
@@ -79,17 +80,22 @@ public class AdminConsole extends JFrame {
 		this.pack();
 		ConsoleControl.write("Console initialized.", LogLevels.Info);
 	}
+	
 	private void buttonClearClick() {
 		field1.setText("");
 		textArea1.setText("");
 	}
 	private void buttonDoneClick() {
 		consoleIn = field1.getText();
+		write(consoleIn);
 		AdminCommandController.runCommand(consoleIn);
 		field1.setText("");
 	}
+	
+	//Externally called methods under here.
+	
 	public void write(String text){
-		consoleOut = textArea1.getText() + "\n" + text + "\n";
+		consoleOut = textArea1.getText() + text + "\n";
 		textArea1.setText(consoleOut);
 	}
 	
@@ -123,7 +129,7 @@ public class AdminConsole extends JFrame {
 			level = "ISSUE!!!";
 			break;
 		}
-		consoleOut = textArea1.getText() + "\n" + level + " " + text + "\n";
+		consoleOut = textArea1.getText() + level + " " + text + "\n";
 		textArea1.setText(consoleOut);
 	}
 }

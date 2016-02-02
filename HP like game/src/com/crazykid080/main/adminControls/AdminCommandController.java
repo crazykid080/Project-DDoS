@@ -47,6 +47,8 @@ public class AdminCommandController{
 
 			}else if(command.contains("server") && command.contains("edit server")){
 				if(command.contains("new") && command.contains("edit server new")){
+					
+					//THIS NEEDS TO BE HERE!!!!
 					try{
 						String s = command.substring(16, 17);
 						//ConsoleControl.write(s);
@@ -60,15 +62,17 @@ public class AdminCommandController{
 						}else if(s.contains("4")){
 							b = 4;
 						}else{
-							ConsoleControl.write("ERROR: Server type: " + s + " does not"
-									+ " exist!");
+							ConsoleControl.write("Server type: " + s + " does not"
+									+ " exist!" , LogLevels.Error);
 							return;
 						}
 						serverNew(b);
 						return;
 					}catch(Exception e){
-						ConsoleControl.write("ERROR: " + e, LogLevels.Error);
+						ConsoleControl.write("" + e, LogLevels.Error);
+						return;
 					}
+					//---------------------
 				}
 			}
 			ConsoleControl.write("You typed edit, but did not add anything else. \n"
@@ -85,10 +89,7 @@ public class AdminCommandController{
 		}else if(command.contains("server")){
 			if(command.contains("get") && command.contains("server get")){
 				if(command.contains("ip all")){
-					ArrayList<String> ips = IPController.getIPAddresses();
-					for (String string : ips) {
-						ConsoleControl.write(" " + string);
-					}
+					serverGetIPAll();
 					return;
 				}
 			}
@@ -104,56 +105,55 @@ public class AdminCommandController{
 		ConsoleControl.write("ERROR: command doesn't seem to be valid!");
 	}
 
-	public void editTreasuryAdd(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editTreasuryAdd(byte faction, double amount) {
 
 	}
 
 
-	public void editTreasureRemove(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editTreasureRemove(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editTreasurySet(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editTreasurySet(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockPriceAdd(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockPriceAdd(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockPriceSubtract(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockPriceSubtract(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockPriceSet(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockPriceSet(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockInterestAdd(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockInterestAdd(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockInterestSubtract(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockInterestSubtract(byte faction, double amount) {
+		// 
 
 	}
 
 
-	public void editStockInterestSet(byte faction, double amount) {
-		// TODO Auto-generated method stub
+	public static void editStockInterestSet(byte faction, double amount) {
+		// 
 
 	}
 	@SuppressWarnings("unused")
@@ -161,56 +161,58 @@ public class AdminCommandController{
 		Server s = new Server(servType);
 	}
 
-	public void serverNew(byte servType, String IP) {
-		// TODO Auto-generated method stub
+	public static void serverNew(byte servType, String IP) {
+		// 
 
 	}
 
 
-	public void serverProgramAdd(String IP, ProcessTypes type, double vers) {
-		// TODO Auto-generated method stub
+	public static void serverProgramAdd(String IP, ProcessTypes type, double vers) {
+		// 
 
 	}
 
 
-	public void serverProgramRemove(String IP, ProcessTypes type, double vers) {
-		// TODO Auto-generated method stub
+	public static void serverProgramRemove(String IP, ProcessTypes type, double vers) {
+		// 
 
 	}
 
 
-	public void userBan(String name) {
-		// TODO Auto-generated method stub
+	public static void userBan(String name) {
+		// 
 
 	}
 
 
-	public void userNew(String name) {
-		// TODO Auto-generated method stub
+	public static void userNew(String name) {
+		// 
 
 	}
 
 
-	public void serverGetIPAll() {
+	public static void serverGetIPAll() {
 		ArrayList<String> IPs = IPController.getIPAddresses();
-		//TODO: insert for loop here!
+		for (String string : IPs) {
+			ConsoleControl.write(string , LogLevels.Info);
+		}
 	}
 
 
-	public void serverGetFiles(String IP) {
-		// TODO Auto-generated method stub
-
-	}
-
-
-	public void serverGetProcesses(String IP) {
-		// TODO Auto-generated method stub
+	public static void serverGetFiles(String IP) {
+		// 
 
 	}
 
 
-	public void serverGetDrivers(String IP) {
-		// TODO Auto-generated method stub
+	public static void serverGetProcesses(String IP) {
+		// 
+
+	}
+
+
+	public static void serverGetDrivers(String IP) {
+		// 
 
 	}
 	public static void exit() {

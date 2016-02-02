@@ -1,32 +1,30 @@
+package com.crazykid080.main.controllers;
 
+import java.util.ArrayList;
+
+import com.crazykid080.main.Server;
 
 public class ServerController {
-protected ArrayList<Object> serverList = new ArrayList();
+	protected ArrayList<Object> serverList = new ArrayList<Object>();
 
-public void registerServerCB(Object hash){
-serverList.add(hash);
-}
+	public void registerServer(Object hash){
+		serverList.add(hash);
+	}
+	public void unregisterServer(Object hash){
+		serverList.remove(hash);
+	}
 
-public ArrayList<Object> getServers(){
-return serverList;
-}
-
-public Object getServer(String IP){
-
-for(Object object : serverList){
-
-String servIP = ((Server)object).getIP();
-
-if(IP.contains(servIP){
-
-return object;
-
-}
-
-}
-
-}
-
-
-
+	public ArrayList<Object> getAllServers(){
+		return serverList;
+	}
+	
+	public Object getServer(String IP){
+		for(Object object : serverList){
+			String servIP = ((Server)object).getIPAddress();
+			if(IP.contains(servIP)){
+				return object;
+			}
+		}
+		return null;
+	}
 }
