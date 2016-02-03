@@ -11,8 +11,10 @@ public class Server {
 	protected ArrayList<Object> Processes = new ArrayList<>();
 	protected ArrayList<Object> Files = new ArrayList<>();
 	protected String IPListName = "ERROR!!!!!";
- 	protected String IPAddress = "ERROR!!!!!!";
+	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
+	private double burnout = 0;
+	private int burnoutCap = 100;
 	/**
 	 * @author crazykid080
 	 * @param i The server type.
@@ -39,7 +41,7 @@ public class Server {
 		IPListName = ServerType + "Server ";
 		IPAddress = IPController.obtainIP(this);
 	}
-	
+
 	/**
 	 * @author crazykid080
 	 * @param i The server type, this should never be 1! 
@@ -71,7 +73,7 @@ public class Server {
 			break;
 		case 2:
 			//faction 2
- 			//String IPListName = ServerType + " " + faction + " Server";
+			//String IPListName = ServerType + " " + faction + " Server";
 			break;
 		case 3:
 			//faction 3
@@ -88,10 +90,36 @@ public class Server {
 		IPListName = ServerType + "Server ";
 		IPAddress = IPController.obtainIP(this);
 	}
-	
-	
+
+	public void calculateBurnout(){
+		burnout += .03;
+		if(burnoutCap <= burnout){
+			startServerCrash();
+		}
+	}
+
+	public void calculateBurnoutNT(){
+
+	}
+	public void startServerCrash(){
+		
+	}
+
 	//Getters and setters after this line!
 	public String getIPAddress() {
 		return IPAddress;
 	}
+
+	public ArrayList<Object> getDrivers() {
+		return Drivers;
+	}
+
+	public ArrayList<Object> getProcesses() {
+		return Processes;
+	}
+
+	public ArrayList<Object> getFiles() {
+		return Files;
+	}
+
 }

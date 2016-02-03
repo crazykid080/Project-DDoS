@@ -14,6 +14,7 @@ public enum ProcessTypes {
 	IP_Cloak,
 	Upload,
 	Remote_Install,
+	Burnout_Capacitor,
 	Remote_AV,
 	Download,
 	SPRemote_Malware,

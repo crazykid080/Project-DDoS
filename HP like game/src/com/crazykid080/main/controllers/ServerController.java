@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.crazykid080.main.Server;
 
 public class ServerController {
-	protected ArrayList<Object> serverList = new ArrayList<Object>();
+	protected static ArrayList<Object> serverList = new ArrayList<Object>();
 
 	public void registerServer(Object hash){
 		serverList.add(hash);
@@ -14,7 +14,7 @@ public class ServerController {
 		serverList.remove(hash);
 	}
 
-	public ArrayList<Object> getAllServers(){
+	public static ArrayList<Object> getAllServers(){
 		return serverList;
 	}
 	

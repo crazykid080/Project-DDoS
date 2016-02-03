@@ -1,6 +1,7 @@
 package com.crazykid080.main.constructors;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.controllers.Callbacks;
 import com.crazykid080.main.processes.ProcessAttributes;
 import com.crazykid080.main.processes.ProcessTypes;
 
@@ -14,8 +15,13 @@ public class ProcessConstructor implements ProcessAttributes{
 	private boolean isProtectable = true;
 	public double version = -1;
 	public double burnout = -1;
+	public double burnoutCap = -1;
 	protected double encryption = -1;
 	protected double hidden = -1;
+	/**This is the percentage (represented in decimals (100% = 1)) of burnout taken.
+	 * @author crazykid080
+	 */
+	private double burnoutForm = 100000;
 	protected String LocalName = "ERROR";
 	public String VisibleName = "ERROR";
 	private String VisNameType = "ERROR";
@@ -27,9 +33,12 @@ public class ProcessConstructor implements ProcessAttributes{
 		this.version = Vers;
 		this.encryption = 0;
 		this.hidden = 0;
+		burnoutForm = 1;
+		burnoutCap = 1000 * burnout;
 		switch(type){
 		case Firewall_Protect:
 			VisNameType = "Firewall Protect";
+			burnoutForm = 1;
 			break;
 		case Password_Protect:
 			VisNameType = "Password Protect";
@@ -87,6 +96,9 @@ public class ProcessConstructor implements ProcessAttributes{
 			break;
 		case Upload:
 			break;
+		case Burnout_Capacitor:
+			burnoutCap = 2500 * version;
+			break;
 		default:
 			ConsoleControl.write("ERROR: Process type not found! Why was this"
 					+ " not caught before?");
@@ -97,8 +109,8 @@ public class ProcessConstructor implements ProcessAttributes{
 		VisibleName = VisNameType+" Version "+version+" ("+burnout+")";
 		//ConsoleControl.write("Set LocalName is: "+LocalName+" .");
 		//ConsoleControl.write("Set VisibleName is: "+VisibleName+" .");
-		/*int Hashcode = this.hashCode();
-		Callbacks.RegisterProcess(Hashcode);*/
+		Callbacks.RegisterProcess(this);
+		
 	}
 	public void setBurnout(double percent){
 		ConsoleControl.write("Old burnout: "+this.burnout);
@@ -109,6 +121,17 @@ public class ProcessConstructor implements ProcessAttributes{
 		ConsoleControl.write("Old burnout: "+this.burnout);
 		this.burnout += percent;
 		ConsoleControl.write("New burnout: "+this.burnout);
+	}
+	public void onBurnoutTick(){
+		addBurnout(burnoutForm * .01);
+	}
+	public void calculateBurnout(){
+		if(burnoutCap <= burnout){
+			initiateProccessCrash();
+		}
+	}
+	public void initiateProccessCrash(){
+		
 	}
 	
 	//--------------- getters below
