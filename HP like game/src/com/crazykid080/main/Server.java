@@ -6,6 +6,8 @@ import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.constructors.ProcessConstructor;
 import com.crazykid080.main.controllers.IPController;
+import com.crazykid080.main.drivers.DriverTypes;
+import com.crazykid080.main.constructors.DriverConstructor;
 
 public class Server {
 	protected ArrayList<Object> Drivers = new ArrayList<>();
@@ -14,8 +16,13 @@ public class Server {
 	protected String IPListName = "ERROR!!!!!";
 	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
-	private double burnout = 0;
-	private int burnoutCap = 100;
+	//private double burnout = 0;
+	//private int burnoutCap = 100;
+	/**
+	 * This will hold the Username of the owner, default is Admin.
+	 */
+	@SuppressWarnings("unused")
+	private String Owner = "Admin";
 	/**
 	 * @author crazykid080
 	 * @param i The server type.
@@ -93,10 +100,10 @@ public class Server {
 	}
 
 	public void calculateBurnout(){
-		burnout += .03;
-		if(burnoutCap <= burnout){
+		//burnout += .03;
+		/*if(burnoutCap <= burnout){
 			startServerCrash();
-		}
+		 }*/
 	}
 
 	public void calculateBurnoutNT(){
@@ -106,6 +113,23 @@ public class Server {
 		for (Object object : Processes) {
 			((ProcessConstructor)object).calculateBurnout();
 		}
+	}
+
+	@SuppressWarnings("unused")
+	private void createDrivers(){
+		//TODO: Add this to constructors.
+		DriverConstructor a = new DriverConstructor(DriverTypes.IDE, .05);
+		Drivers.add(a);
+		DriverConstructor b = new DriverConstructor(DriverTypes.SysBurn);
+		Drivers.add(b);
+		DriverConstructor c = new DriverConstructor(DriverTypes.CPUOptimize);
+		Drivers.add(c);
+		DriverConstructor d = new DriverConstructor(DriverTypes.RAMOptimize);
+		Drivers.add(d);
+		DriverConstructor e = new DriverConstructor(DriverTypes.Recovery, 0);
+		Drivers.add(e);
+		DriverConstructor f = new DriverConstructor(DriverTypes.AVSystem, 0);
+		Drivers.add(f);
 	}
 
 	//Getters and setters after this line!
