@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
+import com.crazykid080.main.constructors.ProcessConstructor;
 import com.crazykid080.main.controllers.IPController;
 
 public class Server {
@@ -102,7 +103,9 @@ public class Server {
 
 	}
 	public void startServerCrash(){
-		
+		for (Object object : Processes) {
+			((ProcessConstructor)object).calculateBurnout();
+		}
 	}
 
 	//Getters and setters after this line!

@@ -4,6 +4,7 @@ public enum ProcessTypes {
 	//SP == subprocess
 	//SPL == subprocess local
 	//SPR == subprocess remote
+	Timer,
 	Firewall_Protect,
 	Password_Protect,
 	Firewall_Break,

@@ -99,6 +99,10 @@ public class ProcessConstructor implements ProcessAttributes{
 		case Burnout_Capacitor:
 			burnoutCap = 2500 * version;
 			break;
+		case Timer:
+			burnoutForm = 0;
+			burnoutCap = 0;
+			break;
 		default:
 			ConsoleControl.write("ERROR: Process type not found! Why was this"
 					+ " not caught before?");
@@ -110,7 +114,7 @@ public class ProcessConstructor implements ProcessAttributes{
 		//ConsoleControl.write("Set LocalName is: "+LocalName+" .");
 		//ConsoleControl.write("Set VisibleName is: "+VisibleName+" .");
 		Callbacks.RegisterProcess(this);
-		
+
 	}
 	public void setBurnout(double percent){
 		ConsoleControl.write("Old burnout: "+this.burnout);
@@ -126,16 +130,18 @@ public class ProcessConstructor implements ProcessAttributes{
 		addBurnout(burnoutForm * .01);
 	}
 	public void calculateBurnout(){
-		if(burnoutCap <= burnout){
-			initiateProccessCrash();
+		if(type != ProcessTypes.Timer ){
+			if(burnoutCap <= burnout){
+				initiateProccessCrash();
+			}
 		}
 	}
 	public void initiateProccessCrash(){
 		
 	}
-	
+
 	//--------------- getters below
-	
+
 	public ProcessTypes getType(){
 		return type;
 	}
@@ -148,23 +154,23 @@ public class ProcessConstructor implements ProcessAttributes{
 	public void setRunning(boolean isRunning) {
 		this.isRunning = isRunning;
 	}
-	
+
 	// ------------------ attributes below
-	
+
 	@Override
 	public boolean hasSubprocess() {
 		return hasSubprocess;
-		
+
 	}
 	@Override
 	public boolean isSubprocess() {
 		return isSubprocess;
-		
+
 	}
 	@Override
 	public boolean hasTimedSubprocess() {
 		return hasTimedSubproces;
-		
+
 	}
 	@Override
 	public boolean isInstalling() {
@@ -173,13 +179,13 @@ public class ProcessConstructor implements ProcessAttributes{
 	@Override
 	public boolean hasRemoteLog(String log) {
 		return hasRemoteLog;
-		
+
 	}
 	@Override
 	public boolean hasLocalLog(String log) {
 		return false;
 		//TODO: FIX THE RETURN BECAUSE IT ALWAYS RETURNS FALSE
-		
+
 	}
 	@Override
 	public boolean isResearch() {
@@ -208,12 +214,12 @@ public class ProcessConstructor implements ProcessAttributes{
 	@Override
 	public void setProtection(double hidden, double encryption, boolean is) {
 		if(isProtectable()){
-			
+
 		}
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }
