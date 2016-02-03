@@ -2,6 +2,7 @@ package com.crazykid080.main.adminControls;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -27,10 +28,15 @@ public class AdminConsole extends JFrame {
 		this.setTitle("Admin Console");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
-		this.setLocationRelativeTo(null);
+		
 
 		buttonDone = new JButton("Done");
 		buttonClear = new JButton("Clear");
+		
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		int width = (int) screenSize.getWidth();
+		int height = (int) screenSize.getHeight();
+		Dimension test = new Dimension(width - 250, height - 250);
 
 
 		buttonDone.addActionListener(e -> buttonDoneClick());
@@ -43,7 +49,7 @@ public class AdminConsole extends JFrame {
 		panel2.add(buttonClear);
 		panel2.add(buttonDone);
 
-		Dimension field = new Dimension(200, 25);
+		Dimension field = new Dimension((int) (screenSize.getWidth() / 1.5), 25);
 
 		KeyListener keyListener = new KeyListener() {
 			public void keyPressed(KeyEvent keyEvent) {
@@ -61,8 +67,10 @@ public class AdminConsole extends JFrame {
 		field1.setFocusable(true);
 		field1.addKeyListener(keyListener);
 		
-		Dimension area = new Dimension(375, 300);
+		Dimension area = new Dimension((int) (screenSize.getWidth() / 1.5), (int) (screenSize.getHeight() / 1.5));
 		textArea1.setPreferredSize(area);
+		textArea1.setMinimumSize(area);
+		textArea1.setMaximumSize(screenSize);
 		textArea1.setLineWrap(true);
 		textArea1.setEditable(false);
 
@@ -72,8 +80,8 @@ public class AdminConsole extends JFrame {
 		this.add(panel2, BorderLayout.SOUTH);
 		panel2.setVisible(true);
 
-		Dimension d = new Dimension(400, 400);
-		this.setPreferredSize(d);
+		//Dimension d = new Dimension(400, 400);
+		this.setPreferredSize(test);
 
 		ConsoleControl.registerConsole(this);
 
