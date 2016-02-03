@@ -59,7 +59,7 @@ public class Server {
 		//TODO: Implement this fully, as of right now, this doesn't not change anything!
 		switch(i){
 		case 1:
-			ServerType = "Private";
+			ConsoleControl.write("Attempted to create a private faction server!", LogLevels.Error);
 			break;
 		case 2:
 			ServerType = "Public";
@@ -99,7 +99,14 @@ public class Server {
 		IPAddress = IPController.obtainIP(this);
 	}
 
+	public Server(String Owner){
+		//TODO: This does not validate the owner.
+		//Reason: No User class yet!
+		this.Owner = Owner;
+	}
+	
 	public void calculateBurnout(){
+		//TODO: Make this do SOMETHING!
 		//burnout += .03;
 		/*if(burnoutCap <= burnout){
 			startServerCrash();
@@ -107,7 +114,9 @@ public class Server {
 	}
 
 	public void calculateBurnoutNT(){
-
+		/*if(burnoutCap <= burnout){
+			startServerCrash();
+		 }*/
 	}
 	public void startServerCrash(){
 		for (Object object : Processes) {
