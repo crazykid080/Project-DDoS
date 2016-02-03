@@ -16,6 +16,10 @@ public class Server {
 	protected String ServerType = "ERROR!!!!!";
 	private double burnout = 0;
 	private int burnoutCap = 100;
+/**
+* This will hold the Username of the owner, default is Admin.
+*/
+private String Owner = "Admin";
 	/**
 	 * @author crazykid080
 	 * @param i The server type.
