@@ -119,7 +119,16 @@ public class Server {
 		 }*/
 	}
 	public void startServerCrash(){
+Random r = new Random();
+double chance = r.nextInt(1000);
 		for (Object object : Processes) {
+
+if(chance >= 350){
+((ProcessConstructor)object.addBurnout(35);
+}else if(chance >= 500){
+((ProcessConstructor)object).addBurnout(10);
+}
+
 			((ProcessConstructor)object).calculateBurnout();
 		}
 	}
