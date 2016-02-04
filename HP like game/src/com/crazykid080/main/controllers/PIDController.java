@@ -17,8 +17,8 @@ public class PIDController {
 			int PID = PIDs.indexOf(process);
 			return PID;
 		}else{
-			ConsoleControl.write("ERROR: " + process + " has not registed a PID!");
+			ConsoleControl.write(process + " has not registed a PID!", LogLevels.Error);
 		}
-		return -1;
+		return;
 	}
 }
