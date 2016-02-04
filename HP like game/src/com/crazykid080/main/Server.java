@@ -13,6 +13,7 @@ public class Server {
 	protected ArrayList<Object> Drivers = new ArrayList<>();
 	protected ArrayList<Object> Processes = new ArrayList<>();
 	protected ArrayList<Object> Files = new ArrayList<>();
+protected ArrayList<String> LogFile = new ArrayList<>();
 	protected String IPListName = "ERROR!!!!!";
 	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
@@ -149,6 +150,10 @@ if(chance >= 350){
 		DriverConstructor f = new DriverConstructor(DriverTypes.AVSystem, 0);
 		Drivers.add(f);
 	}
+
+public void writeLog(String text){
+LogFile.add("DATE" + text);
+}
 
 	//Getters and setters after this line!
 	public String getIPAddress() {
