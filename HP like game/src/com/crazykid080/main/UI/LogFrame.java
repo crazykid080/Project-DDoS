@@ -7,6 +7,9 @@ public class LogFrame extends JFrame{
 
 private JPanel panel1 = new JPanel();
 private JTextArea textArea1 = new JTextArea();
+private JButton done = new JButton();
+
+//TODO: Figure out if I need this!
 private ArrayList<String> Logs = new ArrayList<String>();
 
 public LogFrame(){
@@ -14,13 +17,22 @@ public LogFrame(){
 //normal code here
 
 //functional code here
+done = new JButton("Done");
 
-textArea1.setEditable(false);
+done.addActionListener(e -> buttonDoneClick());
+
+//textArea1.setEditable(false);
 
 panel1.add(textArea1);
 
 this.add(panel1);
 
+}
+//private methods
+
+private void buttonDoneClick(){
+String logEdit = textArea1.getText();
+textArea1.setText(logEdit);
 }
 
 //getters and setters?
