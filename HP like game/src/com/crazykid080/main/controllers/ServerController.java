@@ -2,7 +2,7 @@ package com.crazykid080.main.controllers;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.Server;
+import com.crazykid080.main.userControl.Server;
 
 public class ServerController {
 	protected static ArrayList<Object> serverList = new ArrayList<Object>();

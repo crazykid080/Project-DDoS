@@ -3,9 +3,9 @@ package com.crazykid080.main.adminControls;
 import java.util.ArrayList;
 
 import com.crazykid080.main.Main;
-import com.crazykid080.main.Server;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.processes.ProcessTypes;
+import com.crazykid080.main.userControl.Server;
 
 public class AdminCommandController{
 

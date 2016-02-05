@@ -1,4 +1,4 @@
-package com.crazykid080.main;
+package com.crazykid080.main.userControl;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -154,6 +154,17 @@ public class Server {
 
 	public void writeLog(String text){
 		LogFile.add("DATE" + text);
+	}
+	
+	public void deleteServer(){
+		Drivers.clear();
+		Processes.clear();
+		Files.clear();
+		LogFile.clear();
+		IPListName = "ERRRORRR!!!!!";
+		IPAddress = "-1.0.-1.0";
+		ServerType = null;
+		Owner = "ERROR!";
 	}
 
 	//Getters and setters after this line!

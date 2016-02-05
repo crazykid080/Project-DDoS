@@ -3,7 +3,7 @@ package com.crazykid080.main.controllers;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.crazykid080.main.Server;
+import com.crazykid080.main.userControl.Server;
 
 public class IPController {
 	public static ArrayList<Object> IPs = new ArrayList<>();
@@ -30,6 +30,11 @@ public class IPController {
 		}
 		return IPName;
 	}
+	
+	public void unregisterIPAddress(Object c){
+		IPs.remove(c);
+	}
+	
 	public static boolean checkIP(String ip){
 		for (Object object : IPs) {
 			String usedIP = ((Server)object).getIPAddress();

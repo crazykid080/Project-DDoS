@@ -4,6 +4,7 @@ import com.crazykid080.main.adminControls.AdminConsole;
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.threads.BurnoutTimer;
+import com.crazykid080.main.userControl.Server;
 
 public class Main {
 
