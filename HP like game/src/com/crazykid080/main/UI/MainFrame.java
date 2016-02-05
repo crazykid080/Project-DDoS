@@ -10,6 +10,7 @@ public class MainFrame extends JFrame {
 
 	private JButton buttonLogs = new JButton();
 	private JButton buttonDrivers = new JButton();
+private JTextField IPAddress = new JTextField();
 	private JButton buttonFilesProg = new JButton();
 	private JButton buttonRunning = new JButton();
 
@@ -25,6 +26,10 @@ public class MainFrame extends JFrame {
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
 
+//String ActiveIP = user.getActiveIP();
+//IPAddress.setText(ActiveIP);
+
+
 		buttonLogs.addActionListener(e -> buttonLogsClick());
 		buttonDrivers.addActionListener(e -> buttonDriversClick());
 		buttonFilesProg.addActionListener(e -> buttonFilesProgClick());
@@ -39,18 +44,18 @@ public class MainFrame extends JFrame {
 	}
 
 	private void buttonRunningClick() {
-		
+	//new UI for running processes
 	}
 
 	private void buttonFilesProgClick() {
-		
+		//new UI for files 
 	}
 
 	private void buttonDriversClick() {
-
+//new UI for drivers
 	}
 
 	private void buttonLogsClick() {
-
+//new UI for logs
 	}
 }
