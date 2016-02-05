@@ -1,6 +1,7 @@
 package com.crazykid080.main;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
@@ -13,7 +14,7 @@ public class Server {
 	protected ArrayList<Object> Drivers = new ArrayList<>();
 	protected ArrayList<Object> Processes = new ArrayList<>();
 	protected ArrayList<Object> Files = new ArrayList<>();
-protected ArrayList<String> LogFile = new ArrayList<>();
+	protected ArrayList<String> LogFile = new ArrayList<>();
 	protected String IPListName = "ERROR!!!!!";
 	protected String IPAddress = "ERROR!!!!!!";
 	protected String ServerType = "ERROR!!!!!";
@@ -105,7 +106,7 @@ protected ArrayList<String> LogFile = new ArrayList<>();
 		//Reason: No User class yet!
 		this.Owner = Owner;
 	}
-	
+
 	public void calculateBurnout(){
 		//TODO: Make this do SOMETHING!
 		//burnout += .03;
@@ -120,15 +121,15 @@ protected ArrayList<String> LogFile = new ArrayList<>();
 		 }*/
 	}
 	public void startServerCrash(){
-Random r = new Random();
-double chance = r.nextInt(1000);
+		Random r = new Random();
+		double chance = r.nextInt(1000);
 		for (Object object : Processes) {
 
-if(chance >= 350){
-((ProcessConstructor)object.addBurnout(35);
-}else if(chance >= 500){
-((ProcessConstructor)object).addBurnout(10);
-}
+			if(chance >= 350){
+				((ProcessConstructor)object).addBurnout(35);
+			}else if(chance >= 500){
+				((ProcessConstructor)object).addBurnout(10);
+			}
 
 			((ProcessConstructor)object).calculateBurnout();
 		}
@@ -151,9 +152,9 @@ if(chance >= 350){
 		Drivers.add(f);
 	}
 
-public void writeLog(String text){
-LogFile.add("DATE" + text);
-}
+	public void writeLog(String text){
+		LogFile.add("DATE" + text);
+	}
 
 	//Getters and setters after this line!
 	public String getIPAddress() {

@@ -3,6 +3,7 @@ package com.crazykid080.main.controllers;
 import java.util.ArrayList;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
 
 public class PIDController {
 	protected static ArrayList<Object> PIDs = new ArrayList<>();
@@ -19,6 +20,6 @@ public class PIDController {
 		}else{
 			ConsoleControl.write(process + " has not registed a PID!", LogLevels.Error);
 		}
-		return;
+		return -1;
 	}
 }

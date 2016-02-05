@@ -1,46 +1,50 @@
 package com.crazykid080.main.UI;
 
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 
+@SuppressWarnings("serial")
 public class LogFrame extends JFrame{
 
-private JPanel panel1 = new JPanel();
-private JTextArea textArea1 = new JTextArea();
-private JButton done = new JButton();
+	private JPanel panel1 = new JPanel();
+	private JTextArea textArea1 = new JTextArea();
+	private JButton done = new JButton();
 
-//TODO: Figure out if I need this!
-private ArrayList<String> Logs = new ArrayList<String>();
+	//TODO: Figure out if I need this!
+	@SuppressWarnings("unused")
+	private ArrayList<String> Logs = new ArrayList<String>();
 
-public LogFrame(){
+	public LogFrame(){
 
-//normal code here
+		//normal code here
 
-//functional code here
-done = new JButton("Done");
+		//functional code here
+		done = new JButton("Done");
 
-done.addActionListener(e -> buttonDoneClick());
+		done.addActionListener(e -> buttonDoneClick());
 
-//textArea1.setEditable(false);
+		//textArea1.setEditable(false);
 
-panel1.add(textArea1);
+		panel1.add(textArea1);
 
-this.add(panel1);
+		this.add(panel1);
 
-}
-//private methods
+	}
+	//private methods
 
-private void buttonDoneClick(){
-String logEdit = textArea1.getText();
-textArea1.setText(logEdit);
-}
+	private void buttonDoneClick(){
+		String logEdit = textArea1.getText();
+		textArea1.setText(logEdit);
+	}
 
-//getters and setters?
+	//getters and setters?
 
-//public methods
+	//public methods
 
-public void addLog(String log){
-textArea1.setText(textArea1.getText() + log + "\n");
-}
+	public void addLog(String log){
+		textArea1.setText(textArea1.getText() + log + "\n");
+	}
 
 }

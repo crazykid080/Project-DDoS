@@ -3,6 +3,7 @@ package com.crazykid080.main.UI;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
@@ -10,7 +11,8 @@ public class MainFrame extends JFrame {
 
 	private JButton buttonLogs = new JButton();
 	private JButton buttonDrivers = new JButton();
-private JTextField IPAddress = new JTextField();
+	@SuppressWarnings("unused")
+	private JTextField IPAddress = new JTextField();
 	private JButton buttonFilesProg = new JButton();
 	private JButton buttonRunning = new JButton();
 
@@ -26,15 +28,15 @@ private JTextField IPAddress = new JTextField();
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
 
-//String ActiveIP = user.getActiveIP();
-//IPAddress.setText(ActiveIP);
+		//String ActiveIP = user.getActiveIP();
+		//IPAddress.setText(ActiveIP);
 
 
 		buttonLogs.addActionListener(e -> buttonLogsClick());
 		buttonDrivers.addActionListener(e -> buttonDriversClick());
 		buttonFilesProg.addActionListener(e -> buttonFilesProgClick());
 		buttonRunning.addActionListener(e -> buttonRunningClick());
-		
+
 		panel1.add(buttonLogs);
 		panel1.add(buttonDrivers);
 		panel1.add(buttonFilesProg);
@@ -44,7 +46,7 @@ private JTextField IPAddress = new JTextField();
 	}
 
 	private void buttonRunningClick() {
-	//new UI for running processes
+		//new UI for running processes
 	}
 
 	private void buttonFilesProgClick() {
@@ -52,10 +54,10 @@ private JTextField IPAddress = new JTextField();
 	}
 
 	private void buttonDriversClick() {
-//new UI for drivers
+		//new UI for drivers
 	}
 
 	private void buttonLogsClick() {
-//new UI for logs
+		//new UI for logs
 	}
 }
