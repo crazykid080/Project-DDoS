@@ -5,6 +5,7 @@ import com.crazykid080.main.controllers.Callbacks;
 import com.crazykid080.main.processes.ProcessAttributes;
 import com.crazykid080.main.processes.ProcessTypes;
 
+//TODO: rename to FileConstructor
 public class ProcessConstructor implements ProcessAttributes{
 	private boolean hasSubprocess = false;
 	private boolean isSubprocess = false;
