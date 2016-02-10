@@ -2,7 +2,7 @@ package com.crazykid080.main.threads;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.constructors.ProcessConstructor;
+import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.controllers.ServerController;
 import com.crazykid080.main.userControl.Server;
 
@@ -21,7 +21,7 @@ public class BurnoutTimer implements Runnable {
 				for (Object object : servers) {
 					ArrayList<Object> processes = ((Server)object).getProcesses();
 					for (Object object2 : processes) {
-						((ProcessConstructor)object2).onBurnoutTick();
+						((FileConstructor)object2).onBurnoutTick();
 					}
 				}
 			} catch (InterruptedException e) {

@@ -4,9 +4,9 @@ import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.controllers.Callbacks;
 import com.crazykid080.main.processes.ProcessAttributes;
 import com.crazykid080.main.processes.ProcessTypes;
+import com.crazykid080.main.userControl.Server;
 
-//TODO: rename to FileConstructor
-public class ProcessConstructor implements ProcessAttributes{
+public class FileConstructor implements ProcessAttributes{
 	private boolean hasSubprocess = false;
 	private boolean isSubprocess = false;
 	private boolean hasTimedSubproces = false;
@@ -19,7 +19,7 @@ public class ProcessConstructor implements ProcessAttributes{
 	public double burnoutCap = -1;
 	protected double encryption = -1;
 	protected double hidden = -1;
-private Server severOwned = null;
+	private Server serverOwned = null;
 	/**This is the percentage (represented in decimals (100% = 1)) of burnout taken.
 	 * @author crazykid080
 	 */
@@ -29,7 +29,7 @@ private Server severOwned = null;
 	private String VisNameType = "ERROR";
 	private ProcessTypes type = null;
 	private boolean isRunning = false;
-	public ProcessConstructor(double Vers, double Burnout, ProcessTypes type){
+	public FileConstructor(double Vers, double Burnout, ProcessTypes type){
 		this.type = type;
 		this.burnout = Burnout;
 		this.version = Vers;
@@ -139,7 +139,7 @@ private Server severOwned = null;
 		}
 	}
 	public void initiateProccessCrash(){
-		
+
 	}
 
 	//--------------- getters and setters below
@@ -156,9 +156,9 @@ private Server severOwned = null;
 	public void setRunning(boolean isRunning) {
 		this.isRunning = isRunning;
 	}
-public Server getServer(){
-return serverOwned;
-}
+	public Server getServer(){
+		return serverOwned;
+	}
 
 	// ------------------ attributes below
 
