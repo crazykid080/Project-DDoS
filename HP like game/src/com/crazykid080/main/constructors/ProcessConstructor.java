@@ -19,6 +19,7 @@ public class ProcessConstructor implements ProcessAttributes{
 	public double burnoutCap = -1;
 	protected double encryption = -1;
 	protected double hidden = -1;
+private Server severOwned = null;
 	/**This is the percentage (represented in decimals (100% = 1)) of burnout taken.
 	 * @author crazykid080
 	 */
@@ -141,7 +142,7 @@ public class ProcessConstructor implements ProcessAttributes{
 		
 	}
 
-	//--------------- getters below
+	//--------------- getters and setters below
 
 	public ProcessTypes getType(){
 		return type;
@@ -155,6 +156,9 @@ public class ProcessConstructor implements ProcessAttributes{
 	public void setRunning(boolean isRunning) {
 		this.isRunning = isRunning;
 	}
+public Server getServer(){
+return serverOwned;
+}
 
 	// ------------------ attributes below
 
