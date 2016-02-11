@@ -24,7 +24,13 @@ public class UserController {
 		return false;
 	}
 	public void deleteUser(String user){
-
+for (Object object : users){
+//TODO: See if I can turn this into a variable
+String name = ((User)object).getUsername();
+if(user.equals(name)){
+((User)object).removeUser();
+}
+}
 	}
 	public void deleteUser(Object s){
 		((User)s).removeUser();

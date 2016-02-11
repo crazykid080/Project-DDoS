@@ -5,7 +5,7 @@ import java.util.Random;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
-import com.crazykid080.main.constructors.ProcessConstructor;
+import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.drivers.DriverTypes;
 import com.crazykid080.main.constructors.DriverConstructor;
@@ -126,12 +126,12 @@ public class Server {
 		for (Object object : Processes) {
 
 			if(chance >= 350){
-				((ProcessConstructor)object).addBurnout(35);
+				((FileConstructor)object).addBurnout(35);
 			}else if(chance >= 500){
-				((ProcessConstructor)object).addBurnout(10);
+				((FileConstructor)object).addBurnout(10);
 			}
 
-			((ProcessConstructor)object).calculateBurnout();
+			((FileConstructor)object).calculateBurnout();
 		}
 	}
 

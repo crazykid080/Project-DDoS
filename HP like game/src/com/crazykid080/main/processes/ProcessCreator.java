@@ -1,7 +1,7 @@
 package com.crazykid080.main.processes;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.constructors.ProcessConstructor;
+import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.controllers.Callbacks;
 
 public class ProcessCreator {
@@ -62,7 +62,7 @@ public class ProcessCreator {
 			break;
 		}
 		//ConsoleControl.write("Creating process.");
-		ProcessConstructor con = new ProcessConstructor(vers, burnout, process);
+		FileConstructor con = new FileConstructor(vers, burnout, process);
 		Callbacks.RegisterProcess(con);
 	}
 }

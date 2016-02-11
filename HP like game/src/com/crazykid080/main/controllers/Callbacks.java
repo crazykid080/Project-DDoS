@@ -3,7 +3,7 @@ package com.crazykid080.main.controllers;
 import java.util.ArrayList;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.constructors.ProcessConstructor;
+import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.processes.ProcessTypes;
 
 public class Callbacks {
@@ -25,9 +25,9 @@ public class Callbacks {
 	}
 	public static Object getProcess(ProcessTypes type, double version, double burnout){
 		for (Object object : CBProcesses) {
-			if(((ProcessConstructor)object).getType() == type && 
-					((ProcessConstructor)object).version == version &&
-					((ProcessConstructor)object).burnout == burnout){
+			if(((FileConstructor)object).getType() == type && 
+					((FileConstructor)object).version == version &&
+					((FileConstructor)object).burnout == burnout){
 				return object;
 			}
 		}
