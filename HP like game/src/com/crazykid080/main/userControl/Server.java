@@ -134,6 +134,10 @@ public class Server {
 			((FileConstructor)object).calculateBurnout();
 		}
 	}
+	
+	public void forceIPChange(){
+		IPAddress = IPController.obtainIP(this);
+	}
 
 	@SuppressWarnings("unused")
 	private void createDrivers(){
