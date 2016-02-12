@@ -73,7 +73,13 @@ public class AdminCommandController{
 						return;
 					}
 					//---------------------
-				}
+				}else if(command.contains ("change all ips") && command.contains("edit server change all ips")){
+ArrayList<Object> servers = IPController.getServers();
+for(Object obj : servers){
+//((Server)obj).
+}
+
+}
 			}
 			ConsoleControl.write("You typed edit, but did not add anything else. \n"
 					+ "Did you mean any of these:\n" + editCommands);
