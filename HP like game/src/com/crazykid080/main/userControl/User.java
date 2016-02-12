@@ -9,9 +9,14 @@ public class User {
 	
 	public User(String username){
 		ownedServers = new ArrayList<Object>();
+if(ownedServers.isEmpty()){
 		Server a = new Server(username);
 		ownedServers.add(a);
 		activeServer = a;
+}else{
+ConsoleControl.write("User already has a server, HOW DOES IT HAVE SOMETHING!", LogLevels.Error);
+ConsoleControl.write("This may not be an error later in development.", LogLevels.info);
+}
 		this.user = username;
 		
 	}
@@ -23,9 +28,8 @@ public class User {
 	public void addServer(Object s){
 		ownedServers.add(s);
 	}
-	
+	//TODO: create the function that works!
 	public boolean validateUser(){
-		
 		return false;
 	}
 	
