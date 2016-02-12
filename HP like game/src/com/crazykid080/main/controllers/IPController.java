@@ -51,4 +51,9 @@ public class IPController {
 		}
 		return e;
 	}
+
+public static ArrayList<Object> getServers(){
+return IPs;
+}
+
 }
