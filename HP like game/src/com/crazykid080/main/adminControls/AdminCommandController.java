@@ -74,11 +74,8 @@ public class AdminCommandController{
 					}
 					//---------------------
 				}else if(command.contains ("change all ips") && command.contains("edit server change all ips")){
-					ArrayList<Object> servers = IPController.getServers();
-					for(Object obj : servers){
-						((Server)obj).forceIPChange();
-					}
-
+					editServerForceIPChange();
+					return;
 				}
 			}
 			ConsoleControl.write("You typed edit, but did not add anything else. \n"
@@ -125,6 +122,13 @@ public class AdminCommandController{
 	public static void editTreasurySet(byte faction, double amount) {
 		// 
 
+	}
+	
+	public static void editServerForceIPChange(){
+		ArrayList<Object> servers = IPController.getServers();
+		for(Object obj : servers){
+			((Server)obj).forceIPChange();	
+		}
 	}
 
 
