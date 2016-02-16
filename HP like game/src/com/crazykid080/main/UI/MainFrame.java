@@ -28,8 +28,9 @@ public class MainFrame extends JFrame {
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
 
-		//String ActiveIP = user.getActiveIP();
-		//IPAddress.setText(ActiveIP);
+		String ActiveIP = User.getActiveIP();
+ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
+		IPAddress.setText(ActiveIP);
 
 
 		buttonLogs.addActionListener(e -> buttonLogsClick());
@@ -59,5 +60,6 @@ public class MainFrame extends JFrame {
 
 	private void buttonLogsClick() {
 		//new UI for logs
+LogFrame log = new LogFrame();
 	}
 }
