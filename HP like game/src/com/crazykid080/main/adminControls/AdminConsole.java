@@ -28,11 +28,11 @@ public class AdminConsole extends JFrame {
 		this.setTitle("Admin Console");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
-		
+
 
 		buttonDone = new JButton("Done");
 		buttonClear = new JButton("Clear");
-		
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int) screenSize.getWidth();
 		int height = (int) screenSize.getHeight();
@@ -66,7 +66,7 @@ public class AdminConsole extends JFrame {
 		field1.setPreferredSize(field);
 		field1.setFocusable(true);
 		field1.addKeyListener(keyListener);
-		
+
 		Dimension area = new Dimension((int) (screenSize.getWidth() / 1.5), (int) (screenSize.getHeight() / 1.5));
 		textArea1.setPreferredSize(area);
 		textArea1.setMinimumSize(area);
@@ -88,7 +88,7 @@ public class AdminConsole extends JFrame {
 		this.pack();
 		ConsoleControl.write("Console initialized.", LogLevels.Info);
 	}
-	
+
 	private void buttonClearClick() {
 		field1.setText("");
 		textArea1.setText("");
@@ -99,20 +99,20 @@ public class AdminConsole extends JFrame {
 		AdminCommandController.runCommand(consoleIn);
 		field1.setText("");
 	}
-	
+
 	//Externally called methods under here.
-	
+
 	public void write(String text){
 		consoleOut = textArea1.getText() + text + "\n";
 		textArea1.setText(consoleOut);
 	}
-	
+
 	private void keyPressAction(KeyEvent key){
 		if(key.getKeyChar() == KeyEvent.VK_ENTER){
 			buttonDoneClick();
 		}
 	}
-	
+
 	/**
 	 * @author Crazykid080
 	 * @param text The message you wish to send

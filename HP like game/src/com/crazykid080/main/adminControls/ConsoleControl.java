@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class ConsoleControl{
 	protected static ArrayList<Object> consoles = new ArrayList<>();
-	
+
 	public static void registerConsole(Object hash){
 		consoles.add(hash);
 	}
-	
+
 	public static ArrayList<Object> getConsoles(){
 		return consoles;
 	}

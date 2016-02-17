@@ -18,11 +18,11 @@ public class IPController {
 		}while(IPName == "255.255.255.255" | IPName == "0.0.0.0" | 
 				IPName == "127.0.0.1");
 		for (Object object : IPs) {
-			
+
 			if(object.equals(hash)){
 				added = true;
 				//System.out.println("Server has already been registered, probably an IP "
-					//	+ "change.");
+				//	+ "change.");
 			}
 		}
 		if(added == false){
@@ -30,11 +30,11 @@ public class IPController {
 		}
 		return IPName;
 	}
-	
+
 	public void unregisterIPAddress(Object c){
 		IPs.remove(c);
 	}
-	
+
 	public static boolean checkIP(String ip){
 		for (Object object : IPs) {
 			String usedIP = ((Server)object).getIPAddress();
@@ -52,8 +52,8 @@ public class IPController {
 		return e;
 	}
 
-public static ArrayList<Object> getServers(){
-return IPs;
-}
+	public static ArrayList<Object> getServers(){
+		return IPs;
+	}
 
 }

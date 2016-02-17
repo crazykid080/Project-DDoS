@@ -123,7 +123,7 @@ public class AdminCommandController{
 		// 
 
 	}
-	
+
 	public static void editServerForceIPChange(){
 		ArrayList<Object> servers = IPController.getServers();
 		for(Object obj : servers){

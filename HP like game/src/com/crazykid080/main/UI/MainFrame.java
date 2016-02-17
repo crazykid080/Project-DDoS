@@ -5,13 +5,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
+
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
 	private JPanel panel1 = new JPanel();
 
 	private JButton buttonLogs = new JButton();
 	private JButton buttonDrivers = new JButton();
-	@SuppressWarnings("unused")
 	private JTextField IPAddress = new JTextField();
 	private JButton buttonFilesProg = new JButton();
 	private JButton buttonRunning = new JButton();
@@ -28,8 +30,8 @@ public class MainFrame extends JFrame {
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
 
-		String ActiveIP = User.getActiveIP();
-ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
+		String ActiveIP = "PLACEHOLDER";
+		ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
 		IPAddress.setText(ActiveIP);
 
 
@@ -58,8 +60,9 @@ ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
 		//new UI for drivers
 	}
 
+	@SuppressWarnings("unused")
 	private void buttonLogsClick() {
 		//new UI for logs
-LogFrame log = new LogFrame();
+		LogFrame log = new LogFrame();
 	}
 }

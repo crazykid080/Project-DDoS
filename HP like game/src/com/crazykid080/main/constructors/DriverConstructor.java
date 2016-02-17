@@ -10,7 +10,7 @@ public class DriverConstructor{
 
 	@SuppressWarnings("unused")
 	private double version = 0;
-	
+
 	//THESE SHOULD NOT BE DEFINED FOR ALL DRIVERS
 	@SuppressWarnings("unused")
 	private double burnCap = -1;

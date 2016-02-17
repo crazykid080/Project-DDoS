@@ -134,7 +134,7 @@ public class Server {
 			((FileConstructor)object).calculateBurnout();
 		}
 	}
-	
+
 	public void forceIPChange(){
 		IPAddress = IPController.obtainIP(this);
 	}
@@ -159,7 +159,7 @@ public class Server {
 	public void writeLog(String text){
 		LogFile.add("DATE" + text);
 	}
-	
+
 	public void deleteServer(){
 		Drivers.clear();
 		Processes.clear();

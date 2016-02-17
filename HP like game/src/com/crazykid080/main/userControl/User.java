@@ -7,7 +7,7 @@ import com.crazykid080.main.adminControls.LogLevels;
 
 public class User {
 	private ArrayList<Object> ownedServers = new ArrayList<Object>();
-	private Object activeServer = null;
+	private Server activeServer = null;
 	protected String user = "ERROR!!!!!!!!";
 
 	public User(String username){
@@ -48,5 +48,8 @@ public class User {
 		}
 		user = "";
 		activeServer = null;
+	}
+	public String getActiveIP(){
+		return activeServer.IPAddress;
 	}
 }
