@@ -47,7 +47,7 @@ public class AdminCommandController{
 
 			}else if(command.contains("server") && command.contains("edit server")){
 				if(command.contains("new") && command.contains("edit server new")){
-					
+
 					//THIS NEEDS TO BE HERE!!!!
 					try{
 						String s = command.substring(16, 17);
@@ -73,6 +73,9 @@ public class AdminCommandController{
 						return;
 					}
 					//---------------------
+				}else if(command.contains ("change all ips") && command.contains("edit server change all ips")){
+					editServerForceIPChange();
+					return;
 				}
 			}
 			ConsoleControl.write("You typed edit, but did not add anything else. \n"
@@ -119,6 +122,13 @@ public class AdminCommandController{
 	public static void editTreasurySet(byte faction, double amount) {
 		// 
 
+	}
+
+	public static void editServerForceIPChange(){
+		ArrayList<Object> servers = IPController.getServers();
+		for(Object obj : servers){
+			((Server)obj).forceIPChange();	
+		}
 	}
 
 

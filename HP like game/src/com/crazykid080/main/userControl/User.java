@@ -2,33 +2,40 @@ package com.crazykid080.main.userControl;
 
 import java.util.ArrayList;
 
+import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
+
 public class User {
 	private ArrayList<Object> ownedServers = new ArrayList<Object>();
-	private Object activeServer = null;
+	private Server activeServer = null;
 	protected String user = "ERROR!!!!!!!!";
-	
+
 	public User(String username){
 		ownedServers = new ArrayList<Object>();
-		Server a = new Server(username);
-		ownedServers.add(a);
-		activeServer = a;
+		if(ownedServers.isEmpty()){
+			Server a = new Server(username);
+			ownedServers.add(a);
+			activeServer = a;
+		}else{
+			ConsoleControl.write("User already has a server, HOW DOES IT HAVE SOMETHING!", LogLevels.Error);
+			ConsoleControl.write("This may not be an error later in development.", LogLevels.Info);
+		}
 		this.user = username;
-		
+
 	}
-	
+
 	public Object getActiveServer(){
 		return activeServer;
 	}
-	
+
 	public void addServer(Object s){
 		ownedServers.add(s);
 	}
-	
+	//TODO: create the function that works!
 	public boolean validateUser(){
-		
 		return false;
 	}
-	
+
 	public String getUsername(){
 		return user;
 	}
@@ -41,5 +48,8 @@ public class User {
 		}
 		user = "";
 		activeServer = null;
+	}
+	public String getActiveIP(){
+		return activeServer.IPAddress;
 	}
 }
