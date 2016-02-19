@@ -16,9 +16,16 @@ return files.indexOf(hash);
 }
 
 public void unregisterFile(Object hash){
+try{
 
-//this is probably the wrong method
-files.replace(hash, null);
+files.set(files.indexOf(hash), null);
+
+}catch(Exception e){
+
+ConsoleControl.write("ERROR(FIDController): " + e, LogLevels.Error);
+return;
+
+}
 
 }
 
