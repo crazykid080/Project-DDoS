@@ -34,9 +34,24 @@ return;
 }
 
 for(Object obj : listeners){
-//find a way to get the class here!
+//TODO: Find a way to get the class here!
 }
 
+public boolean registerLogListener(Object obj){
+
+if(listeners.contains(obj)){
+return true;
+}
+
+listeners.add(obj);
+if(listeners.contains(Object obj){
+return true;
+}else{
+ConsoleControl.write("Class: LogController, Object " + obj + "could not be added to the listeners ArrayList!", LogLevels.Error);
+return false;
+}
+return false;
+}
 
 }
 
