@@ -17,6 +17,7 @@ public class MainFrame extends JFrame {
 	private JTextField IPAddress = new JTextField();
 	private JButton buttonFilesProg = new JButton();
 	private JButton buttonRunning = new JButton();
+	private JButton buttonAdminConsole = new JButton();
 
 	public MainFrame(){
 		this.setTitle("Main");
@@ -29,6 +30,7 @@ public class MainFrame extends JFrame {
 		buttonDrivers = new JButton("Drivers");
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
+buttonAdminConsole = new JButton("Create New Console");
 
 		String ActiveIP = "PLACEHOLDER";
 		ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
@@ -39,11 +41,13 @@ public class MainFrame extends JFrame {
 		buttonDrivers.addActionListener(e -> buttonDriversClick());
 		buttonFilesProg.addActionListener(e -> buttonFilesProgClick());
 		buttonRunning.addActionListener(e -> buttonRunningClick());
+		buttonAdminConsole.addActionListener(e -> buttonAdminConsoleClick());
 
 		panel1.add(buttonLogs);
 		panel1.add(buttonDrivers);
 		panel1.add(buttonFilesProg);
 		panel1.add(buttonRunning);
+panel1.add(buttonAdminConsole);
 
 		this.add(panel1);
 	}
@@ -59,6 +63,10 @@ public class MainFrame extends JFrame {
 	private void buttonDriversClick() {
 		//new UI for drivers
 	}
+
+private void buttonAdminConsoleClick(){
+AdminConsole con = new AdminConsole();
+}
 
 	@SuppressWarnings("unused")
 	private void buttonLogsClick() {
