@@ -20,8 +20,9 @@ public class ProcessActions{
 
 	}
 
-	public void onInstallStart(/*NEED TO CREATE THE FILES*/ int mil){
-		//new timer(time, file);
+	public void onInstallStart(/*NEED TO CREATE THE FILES*/ int seconds){
+		ProcessTimer a = new ProcessTimer(seconds);
+ 		a.run();
 	}
 
 }
