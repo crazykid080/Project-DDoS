@@ -165,10 +165,10 @@ public class Server {
 		Processes.clear();
 		Files.clear();
 		LogFile.clear();
-		IPListName = "ERRRORRR!!!!!";
-		IPAddress = "-1.0.-1.0";
+		IPListName = "";
+		IPAddress = "";
 		ServerType = null;
-		Owner = "ERROR!";
+		Owner = "";
 	}
 
 	//Getters and setters after this line!

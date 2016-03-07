@@ -24,4 +24,11 @@ public class ConsoleControl{
 			((AdminConsole)object).write(text , level);
 		}
 	}
+
+	public static void createError(String text, LogLevels level, String className){
+		String fullError = "ERROR ( "+ className + " )" + text;
+		write(fullError, level);
+	}
+
+
 }
