@@ -8,7 +8,7 @@ import com.crazykid080.main.userControl.Server;
 
 public class BurnoutTimer implements Runnable {
 	public BurnoutTimer() {
-		
+
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class BurnoutTimer implements Runnable {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
 

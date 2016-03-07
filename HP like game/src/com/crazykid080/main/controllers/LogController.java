@@ -63,14 +63,14 @@ public class LogController{
 	}
 
 
-//getters below
+	//getters below
 
-public String getLogFile(){
-	return logFile;
-}
+	public String getLogFile(){
+		return logFile;
+	}
 
-public LogController getObject(){
-	return this;
-}
+	public LogController getObject(){
+		return this;
+	}
 
 }

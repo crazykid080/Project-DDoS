@@ -17,9 +17,9 @@ public class Main {
 		//ProcessCreator.CreateProcess(ProcessTypes.Password_Protect, 1, 50);
 		BurnoutTimer timer = new BurnoutTimer();
 		timer.run();
-		
+
 	}
-	
+
 	public static void notAdded(){
 		ConsoleControl.write("This is something that hasn't been implemented, sorry!", LogLevels.Warning);
 	}

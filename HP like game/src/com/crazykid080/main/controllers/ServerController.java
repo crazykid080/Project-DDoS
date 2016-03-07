@@ -17,7 +17,7 @@ public class ServerController {
 	public static ArrayList<Object> getAllServers(){
 		return serverList;
 	}
-	
+
 	public Object getServer(String IP){
 		for(Object object : serverList){
 			String servIP = ((Server)object).getIPAddress();

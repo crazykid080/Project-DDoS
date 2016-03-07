@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.crazykid080.main.adminControls.AdminConsole;
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
 
@@ -30,7 +31,7 @@ public class MainFrame extends JFrame {
 		buttonDrivers = new JButton("Drivers");
 		buttonFilesProg = new JButton("Files/Programs");
 		buttonRunning = new JButton("Running");
-buttonAdminConsole = new JButton("Create New Console");
+		buttonAdminConsole = new JButton("Create New Console");
 
 		String ActiveIP = "PLACEHOLDER";
 		ConsoleControl.write("The active IP is: " + ActiveIP , LogLevels.Info);
@@ -47,7 +48,7 @@ buttonAdminConsole = new JButton("Create New Console");
 		panel1.add(buttonDrivers);
 		panel1.add(buttonFilesProg);
 		panel1.add(buttonRunning);
-panel1.add(buttonAdminConsole);
+		panel1.add(buttonAdminConsole);
 
 		this.add(panel1);
 	}
@@ -64,9 +65,10 @@ panel1.add(buttonAdminConsole);
 		//new UI for drivers
 	}
 
-private void buttonAdminConsoleClick(){
-AdminConsole con = new AdminConsole();
-}
+	@SuppressWarnings("unused")
+	private void buttonAdminConsoleClick(){
+		AdminConsole con = new AdminConsole();
+	}
 
 	@SuppressWarnings("unused")
 	private void buttonLogsClick() {
