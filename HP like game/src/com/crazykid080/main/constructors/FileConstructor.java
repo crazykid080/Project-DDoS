@@ -7,10 +7,7 @@ import com.crazykid080.main.processes.ProcessTypes;
 import com.crazykid080.main.userControl.Server;
 
 public class FileConstructor implements ProcessAttributes{
-	private boolean hasSubprocess = false;
-	private boolean isSubprocess = false;
-	private boolean hasTimedSubproces = false;
-	private boolean isRemoteSubprocess = false;
+	
 	private boolean isInstalling = false;
 	private boolean hasRemoteLog = false;
 	private boolean isProtectable = true;
@@ -29,6 +26,7 @@ public class FileConstructor implements ProcessAttributes{
 	private String VisNameType = "ERROR";
 	private ProcessTypes type = null;
 	private boolean isRunning = false;
+//TODO: add FileTypes enum and replace ProcessTypes
 	public FileConstructor(double Vers, double Burnout, ProcessTypes type){
 		this.type = type;
 		this.burnout = Burnout;
@@ -50,8 +48,7 @@ public class FileConstructor implements ProcessAttributes{
 			break;
 		case Password_Break:
 			VisNameType = "Password Break";
-			hasTimedSubproces = true;
-			isRemoteSubprocess = true;
+			
 			break;
 		case Log_Deleter:
 			VisNameType = "Log Deleter";
@@ -138,9 +135,6 @@ public class FileConstructor implements ProcessAttributes{
 			}
 		}
 	}
-	public void initiateProccessCrash(){
-
-	}
 
 	//--------------- getters and setters below
 
@@ -162,21 +156,7 @@ public class FileConstructor implements ProcessAttributes{
 
 	// ------------------ attributes below
 
-	@Override
-	public boolean hasSubprocess() {
-		return hasSubprocess;
-
-	}
-	@Override
-	public boolean isSubprocess() {
-		return isSubprocess;
-
-	}
-	@Override
-	public boolean hasTimedSubprocess() {
-		return hasTimedSubproces;
-
-	}
+	
 	@Override
 	public boolean isInstalling() {
 		return isInstalling;
@@ -192,21 +172,7 @@ public class FileConstructor implements ProcessAttributes{
 		//TODO: FIX THE RETURN BECAUSE IT ALWAYS RETURNS FALSE
 
 	}
-	@Override
-	public boolean isResearch() {
-		isProtectable = false;
-		return false;
-		//TODO: FIX THE RETURN BECAUSE IT ALWAYS RETURNS FALSE
-	}
-	@Override
-	public boolean isTimedMainProcess() {
-		return false;
-		//TODO: FIX THE RETURN BECAUSE IT ALWAYS RETURNS FALSE
-	}
-	@Override
-	public boolean isRemoteSubprocess() {
-		return isRemoteSubprocess;
-	}
+	
 	@Override
 	public boolean isProtected() {
 		//TODO: FIX THE RETURN BECAUSE IT ALWAYS RETURNS FALSE
