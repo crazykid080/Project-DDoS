@@ -9,18 +9,22 @@ import com.crazykid080.main.userControl.Server;
 public class FileConstructor{
 
 	//TODO: add file ID controller
-	//TODO: add file type enum
+	protected FileTypes type = null;
 	String publicName = "ERROR!!!";
 	@SuppressWarnings("unused")
 	private Server parent = null;
 	protected double burnout = -1;
 	public double version = -1;
+protected double burnoutEffect = 1000;
+protected double burnoutCap = 0;
 
-	public FileConstructor(ProcessTypes type, double vers, Server parent){
-
+	public FileConstructor(FileTypes type, double vers, Server parent){
+this.burnoutEffect = 1;
+this.burnoutCap = vers * 1000;
 		this.burnout = 0;
 		this.version = vers;
 		this.parent = parent;
+this.type = type;
 
 		publicName = type + " (" + burnout + " ) " + version;
 
@@ -37,5 +41,29 @@ public class FileConstructor{
 		}
 
 	}
+
+public void onBurnoutTick(){
+
+if(type == FileTypes.Burnout_Capacitor){
+return;
+} else {
+addBurnout (burnoutEffect * .01);
+}
+
+}
+
+public void addBurnout(double burn){
+burnout += burn;
+}
+
+public void checkBurnout(){
+
+if(burnout >= BurnoutCap ){
+//TODO: Do something!
+}
+
+
+}
+
 
 }
