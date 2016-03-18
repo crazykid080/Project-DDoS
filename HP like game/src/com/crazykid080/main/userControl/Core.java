@@ -9,9 +9,12 @@ public class Core extends Server{
 public Core(){
 
 isMainCore = true;
+subCoreNum = 0;
 
 IPAddress = IPController.obtainIP(this);
 
+Core core1 = new Core(this);
+Core core2 = new Core(this);
 
 }
 
