@@ -126,8 +126,14 @@ public class AdminCommandController{
 
 	public static void editServerForceIPChange(){
 		ArrayList<Object> servers = IPController.getServers();
-		for(Object obj : servers){
-			((Server)obj).forceIPChange();	
+		if(object.getClass().toString().equalsIgnoreCase("Server")){
+			for(Object obj : servers){
+				((Server)obj).forceIPChange();	
+			}
+		}else if(object.getClass().toString().equalsIgnoreCase("Core")){
+			for(Object obj : servers){
+				((Core)obj).forceIPChange();	
+			}
 		}
 	}
 
