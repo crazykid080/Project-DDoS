@@ -37,9 +37,16 @@ public class IPController {
 
 	public static boolean checkIP(String ip){
 		for (Object object : IPs) {
-			String usedIP = ((Server)object).getIPAddress();
-			if(ip == usedIP){
-				return false;
+			if(object.getClass().toString().equalsIgnoreCase("Server")){
+				String usedIP = ((Server)object).getIPAddress();
+				if(ip == usedIP){
+					return false;
+				}
+			}else if(object.getClass().toString().equalsIgnoreCase("Core")){
+				String usedIP = ((Server)object).getIPAddress();
+				if(ip == usedIP){
+					return false;
+				}
 			}
 		}
 		return true;
@@ -47,7 +54,11 @@ public class IPController {
 	public static ArrayList<String> getIPAddresses(){
 		ArrayList<String> e = new ArrayList<>();
 		for (Object object : IPs) {
-			e.add(((Server)object).getIPAddress());
+			if(object.getClass().toString().equalsIgnoreCase("Server")){
+				e.add(((Server)object).getIPAddress());
+			}else if(object.getClass().toString().equalsIgnoreCase("Core")){
+				e.add(((Core)object).getIPAddress());
+			}
 		}
 		return e;
 	}
