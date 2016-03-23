@@ -131,7 +131,7 @@ public class FileConstructor implements ProcessAttributes{
 	public void calculateBurnout(){
 		if(type != ProcessTypes.Timer ){
 			if(burnoutCap <= burnout){
-				initiateProccessCrash();
+				//initiateProccessCrash();
 			}
 		}
 	}
@@ -187,6 +187,36 @@ public class FileConstructor implements ProcessAttributes{
 		if(isProtectable()){
 
 		}
+	}
+	@Override
+	public boolean hasSubprocess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isSubprocess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean hasTimedSubprocess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isRemoteSubprocess() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isResearch() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isTimedMainProcess() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 

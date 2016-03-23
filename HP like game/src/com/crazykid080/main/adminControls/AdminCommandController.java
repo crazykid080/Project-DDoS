@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.crazykid080.main.Main;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.processes.ProcessTypes;
+import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
 
 public class AdminCommandController{
@@ -126,13 +127,16 @@ public class AdminCommandController{
 
 	public static void editServerForceIPChange(){
 		ArrayList<Object> servers = IPController.getServers();
-		if(object.getClass().toString().equalsIgnoreCase("Server")){
-			for(Object obj : servers){
+		for (Object obj : servers) {
+
+
+			if(obj.getClass().toString().equalsIgnoreCase("Server")){
+
 				((Server)obj).forceIPChange();	
-			}
-		}else if(object.getClass().toString().equalsIgnoreCase("Core")){
-			for(Object obj : servers){
-				((Core)obj).forceIPChange();	
+
+			}else if(obj.getClass().toString().equalsIgnoreCase("Core")){
+
+				((Core)obj).forceIPChange();
 			}
 		}
 	}

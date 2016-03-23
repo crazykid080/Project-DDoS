@@ -2,7 +2,6 @@ package com.crazykid080.main.files;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
-import com.crazykid080.main.processes.ProcessTypes;
 import com.crazykid080.main.userControl.Server;
 
 //TODO: move this to a new package
@@ -15,16 +14,16 @@ public class FileConstructor{
 	private Server parent = null;
 	protected double burnout = -1;
 	public double version = -1;
-protected double burnoutEffect = 1000;
-protected double burnoutCap = 0;
+	protected double burnoutEffect = 1000;
+	protected double burnoutCap = 0;
 
 	public FileConstructor(FileTypes type, double vers, Server parent){
-this.burnoutEffect = 1;
-this.burnoutCap = vers * 1000;
+		this.burnoutEffect = 1;
+		this.burnoutCap = vers * 1000;
 		this.burnout = 0;
 		this.version = vers;
 		this.parent = parent;
-this.type = type;
+		this.type = type;
 
 		publicName = type + " (" + burnout + " ) " + version;
 
@@ -42,28 +41,28 @@ this.type = type;
 
 	}
 
-public void onBurnoutTick(){
+	public void onBurnoutTick(){
 
-if(type == FileTypes.Burnout_Capacitor){
-return;
-} else {
-addBurnout (burnoutEffect * .01);
-}
+		if(type == FileTypes.Burnout_Capacitor){
+			return;
+		} else {
+			addBurnout (burnoutEffect * .01);
+		}
 
-}
+	}
 
-public void addBurnout(double burn){
-burnout += burn;
-}
+	public void addBurnout(double burn){
+		burnout += burn;
+	}
 
-public void checkBurnout(){
+	public void checkBurnout(){
 
-if(burnout >= BurnoutCap ){
-//TODO: Do something!
-}
+		if(burnout >= burnoutCap ){
+			//TODO: Do something!
+		}
 
 
-}
+	}
 
 
 }

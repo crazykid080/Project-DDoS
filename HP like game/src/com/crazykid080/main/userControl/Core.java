@@ -8,6 +8,7 @@ public class Core extends Server{
 	public int subCoreNum =-1;
 	protected boolean isMainCore = false;
 
+	@SuppressWarnings("unused")
 	public Core() {
 		isMainCore = true;
 		subCoreNum = 0;
