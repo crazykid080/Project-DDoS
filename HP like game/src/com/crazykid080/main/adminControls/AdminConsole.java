@@ -52,12 +52,15 @@ public class AdminConsole extends JFrame {
 		Dimension field = new Dimension((int) (screenSize.getWidth() / 1.5), 25);
 
 		KeyListener keyListener = new KeyListener() {
+			@Override
 			public void keyPressed(KeyEvent keyEvent) {
 				//keyPressAction(keyEvent);
 			}
+			@Override
 			public void keyReleased(KeyEvent keyEvent) {
 				keyPressAction(keyEvent);
 			}
+			@Override
 			public void keyTyped(KeyEvent keyEvent) {
 				//keyPressAction(keyEvent);
 			}
