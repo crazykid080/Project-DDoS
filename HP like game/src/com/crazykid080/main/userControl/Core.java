@@ -16,17 +16,13 @@ public class Core extends Server{
 		Core core1 = new Core(this);
 		Core core2 = new Core(this);
 		Core core3 = new Core(this);
-
 	}
 
 	public Core(Core parent){
-
 		int num = parent.getsubCoreNum();
 		subCoreNum = num + 1;
 		IPAddress = IPController.obtainIP(this);
-
 	}
-
 
 
 	//getters and setters below

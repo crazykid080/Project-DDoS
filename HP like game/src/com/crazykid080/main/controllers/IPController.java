@@ -3,6 +3,8 @@ package com.crazykid080.main.controllers;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
 
@@ -52,14 +54,22 @@ public class IPController {
 		}
 		return true;
 	}
+	@SuppressWarnings("rawtypes")
 	public static ArrayList<String> getIPAddresses(){
 		ArrayList<String> e = new ArrayList<>();
+		ConsoleControl.write("getIPAddresses fired.", LogLevels.Info);
 		for (Object object : IPs) {
-			if(object.getClass().toString().equalsIgnoreCase("Server")){
+			Class a = object.getClass();
+			String b = a.toString();
+			if(b.equalsIgnoreCase("server")){
+				ConsoleControl.write("Server is true.", LogLevels.Info);
 				e.add(((Server)object).getIPAddress());
-			}else if(object.getClass().toString().equalsIgnoreCase("Core")){
+			}else if(b.equalsIgnoreCase("core")){
 				e.add(((Core)object).getIPAddress());
 			}
+		}
+		if(e.isEmpty()){
+			ConsoleControl.write("There are no IP addresses.");
 		}
 		return e;
 	}
