@@ -213,7 +213,6 @@ public class AdminCommandController{
 
 	public static void serverGetIPAll() {
 		ArrayList<String> IPs = IPController.getIPAddresses();
-		ConsoleControl.write("Fired.", LogLevels.Info);
 		for (String string : IPs) {
 			ConsoleControl.write(string , LogLevels.Info);
 		}

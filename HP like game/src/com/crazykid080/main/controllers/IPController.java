@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
 
@@ -57,14 +56,12 @@ public class IPController {
 	@SuppressWarnings("rawtypes")
 	public static ArrayList<String> getIPAddresses(){
 		ArrayList<String> e = new ArrayList<>();
-		ConsoleControl.write("getIPAddresses fired.", LogLevels.Info);
 		for (Object object : IPs) {
 			Class a = object.getClass();
 			String b = a.toString();
-			if(b.equalsIgnoreCase("server")){
-				ConsoleControl.write("Server is true.", LogLevels.Info);
+			if(b.equalsIgnoreCase("class com.crazykid080.main.userControl.Server")){
 				e.add(((Server)object).getIPAddress());
-			}else if(b.equalsIgnoreCase("core")){
+			}else if(b.equalsIgnoreCase("class com.crazykid080.main.userControl.core")){
 				e.add(((Core)object).getIPAddress());
 			}
 		}
