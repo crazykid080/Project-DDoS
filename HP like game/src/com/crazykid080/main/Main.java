@@ -13,14 +13,10 @@ public class Main {
 	public static void main(String[] args) {
 		AdminConsole bleh = new AdminConsole();
 		Server serverMain = new Server(1);
-		//TODO: add for loop to create 10 cores.
 		for (int i = 0; i < 10; i++) {
-			Core core = new Core();
 			ConsoleControl.write(i);
+			Core core = new Core();
 		}
-		//ProcessCreator.CreateProcess(ProcessTypes.Firewall_Protect, 1, 0);
-		//ConstructorTest test = new ConstructorTest(4.3, 0, ProcessTypes.Firewall_Protect);
-		//ProcessCreator.CreateProcess(ProcessTypes.Password_Protect, 1, 50);
 		BurnoutTimer timer = new BurnoutTimer();
 		timer.run();
 

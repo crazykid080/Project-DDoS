@@ -29,7 +29,7 @@ public class ProcessActions{
 	}
 
 	public void onInstallStart(/*NEED TO CREATE THE FILES*/ int seconds){
-		ProcessTimer a = new ProcessTimer(seconds);
+		ProcessTimer a = new ProcessTimer(seconds, this);
 		a.run();
 	}
 
