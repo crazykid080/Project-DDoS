@@ -30,5 +30,13 @@ public class ConsoleControl{
 		write(fullError, level);
 	}
 
+	public static void write(int i) {
+		System.out.println(i);
+		String a = String.valueOf(i);
+		for (Object object : consoles) {
+			((AdminConsole)object).write(a);
+		}
+	}
+
 
 }

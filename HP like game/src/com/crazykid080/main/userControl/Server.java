@@ -30,8 +30,7 @@ public class Server {
 	 * @param i The server type.
 	 */
 	public Server(){
-		ConsoleControl.createError("The default constructor for Server should not be"
-				+ " called!", LogLevels.Error, this.getClass().toString());
+		
 	}
 	public Server(int i){
 		//TODO: Implement this fully, as of right now, this doesn't not change anything!
