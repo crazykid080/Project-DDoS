@@ -2,38 +2,33 @@ package com.crazykid080.main.threads;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.userControl.Core;
 
 public class CoreTimer implements Runnable{
 
 	private long timeLeft = 0;
+	@SuppressWarnings("unused")
 	private long timeMax = 0;
 
-	ArrayList<Core> CoreList = new ArrayList<Core>();
+	ArrayList<Object> CoreList = new ArrayList<Object>();
 
-public CoreTimer(int seconds, Object o){
+	public CoreTimer(int seconds){
 		//obj = new ArrayList<Object>();
 		long time = seconds * 1000;
 		this.timeMax = time;
 		//obj.add(o);
 	}
 
-	public CoreTimer(int seconds , int minutes, Object o){
+	public CoreTimer(int seconds , int minutes){
 		//obj = new ArrayList<Object>();
-		ConsoleControl.write(minutes);
-		ConsoleControl.write(seconds);
 		seconds += minutes * 60;
 		long time = seconds * 1000;
 		this.timeMax = time;
 		//obj.add(o);
 	}
 
-	public CoreTimer(int seconds , int minutes, int hours, Object o){
+	public CoreTimer(int seconds , int minutes, int hours){
 		//obj = new ArrayList<Object>();
-		ConsoleControl.write(hours);
-		ConsoleControl.write(minutes);
-		ConsoleControl.write(seconds);
 		minutes += hours * 60;
 		seconds += minutes * 60;
 		long time = seconds * 1000;
@@ -41,20 +36,26 @@ public CoreTimer(int seconds, Object o){
 		//obj.add(o);
 	}
 
-public void addCore(Core obj){
+	public void addCore(Core obj){
 
-CoreList.add(obj);
+		CoreList.add(obj);
 
-}
+	}
 
-@Override
+	@Override
 	public synchronized void run(){
-this.wait(timeLeft);
+		timeLeft = timeMax;
+		try {
+			this.wait(timeLeft);
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+		}
 
- for (Core object : CoreList) {
-object.onProcessComplete();
-}
+		for (Object object : CoreList) {
+			((Core)object).onProcessComplete();
+		}
 
-}
+	}
 
 }

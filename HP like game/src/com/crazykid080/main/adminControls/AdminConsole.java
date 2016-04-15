@@ -43,6 +43,7 @@ public class AdminConsole extends JFrame {
 
 		buttonClear.addActionListener(e -> buttonClearClick());
 
+		
 		panel1.add(textArea1);
 
 		panel2.add(field1);

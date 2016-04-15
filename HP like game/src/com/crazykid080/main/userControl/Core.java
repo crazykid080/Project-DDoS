@@ -1,9 +1,10 @@
 package com.crazykid080.main.userControl;
 
+import com.crazykid080.main.Main;
 import com.crazykid080.main.adminControls.ConsoleControl;
+import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.controllers.IPController;
-import com.crazykid080.main.threads.ProcessTimer;
-import com.crazykid080.main.userControl.Server;
+import com.crazykid080.main.threads.CoreTimer;
 
 public class Core extends Server{
 
@@ -18,22 +19,18 @@ public class Core extends Server{
 		Core core1 = new Core(this);
 		Core core2 = new Core(this);
 		Core core3 = new Core(this);
-		runTimer();
+		CoreTimer timer = Main.getCoreTimer();
+		timer.addCore(this);
 	}
 
 	public Core(Core parent){
 		int num = parent.getsubCoreNum();
 		subCoreNum = num + 1;
 		IPAddress = IPController.obtainIP(this);
-		runTimer();
+		CoreTimer timer = Main.getCoreTimer();
+		timer.addCore(this);
 	}
 	
-	private void runTimer(){
-		ProcessTimer timer = new ProcessTimer(30, this);
-		timer.run();
-		ConsoleControl.write("Test");
-	}
-
 	//getters and setters below
 
 	public int getsubCoreNum(){
@@ -42,8 +39,8 @@ public class Core extends Server{
 	
 	@SuppressWarnings("unused")
 	public void onProcessComplete(){
-		ConsoleControl.write("Triggered");
-		Core core = new Core(this);
+		ConsoleControl.write("Triggered", LogLevels.Info);
+		//Core core = new Core(this);
 	}
 
 }
