@@ -1,8 +1,9 @@
 package com.crazykid080.main.files;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.userControl.Server;
+
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
 
 //TODO: move this to a new package
 public class FileConstructor{

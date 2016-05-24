@@ -1,10 +1,11 @@
 package com.crazykid080.main.constructors;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.controllers.Callbacks;
 import com.crazykid080.main.processes.ProcessAttributes;
 import com.crazykid080.main.processes.ProcessTypes;
 import com.crazykid080.main.userControl.Server;
+
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class FileConstructor implements ProcessAttributes{
 	

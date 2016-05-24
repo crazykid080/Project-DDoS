@@ -5,9 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.crazykid080.main.adminControls.AdminConsole;
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
+import crazykid080.main.adminControls.AdminConsole;
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {

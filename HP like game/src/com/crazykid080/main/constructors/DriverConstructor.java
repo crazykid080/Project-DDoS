@@ -2,9 +2,10 @@ package com.crazykid080.main.constructors;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.drivers.DriverTypes;
+
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
 
 public class DriverConstructor{
 

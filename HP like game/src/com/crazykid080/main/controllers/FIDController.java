@@ -2,8 +2,8 @@ package com.crazykid080.main.controllers;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
 
 public class FIDController{
 

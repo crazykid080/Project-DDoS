@@ -1,7 +1,8 @@
 package com.crazykid080.main.controllers;
 
 import java.util.ArrayList;
-import com.crazykid080.main.userControl.*;
+
+import com.crazykid080.main.userControl.User;
 
 public class UserController {
 	protected ArrayList<Object> users = new ArrayList<Object>();
