@@ -1,8 +1,9 @@
 package com.crazykid080.main.processes;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.controllers.Callbacks;
+
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class ProcessCreator {
 	public static void CreateProcess(ProcessTypes process, double vers, double burnout){

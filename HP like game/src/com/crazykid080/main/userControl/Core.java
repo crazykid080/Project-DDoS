@@ -1,10 +1,11 @@
 package com.crazykid080.main.userControl;
 
 import com.crazykid080.main.Main;
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.controllers.IPController;
 import com.crazykid080.main.threads.CoreTimer;
+
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
 
 public class Core extends Server{
 

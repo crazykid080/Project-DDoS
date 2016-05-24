@@ -2,7 +2,10 @@ package com.crazykid080.main.UI;
 
 import java.util.ArrayList;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 
 @SuppressWarnings("serial")

@@ -1,12 +1,12 @@
 package com.crazykid080.main;
 
-import com.crazykid080.main.adminControls.AdminConsole;
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
 import com.crazykid080.main.threads.BurnoutTimer;
 import com.crazykid080.main.threads.CoreTimer;
 import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
+
+import crazykid080.main.adminControls.AdminConsole;
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class Main {
 	
@@ -31,7 +31,7 @@ public class Main {
 	}
 	
 	public static void notAdded(){
-		ConsoleControl.write("This is something that hasn't been implemented, sorry!", LogLevels.Warning);
+		ConsoleControl.write("This is something that hasn't been implemented, sorry!", crazykid080.main.adminControls.LogLevels.Warning);
 	}
 
 }

@@ -2,9 +2,10 @@ package com.crazykid080.main.controllers;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.constructors.FileConstructor;
 import com.crazykid080.main.processes.ProcessTypes;
+
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class Callbacks {
 	@SuppressWarnings("rawtypes")

@@ -1,8 +1,6 @@
 package com.crazykid080.main.threads;
 
-import java.awt.List;
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 import com.crazykid080.main.userControl.Core;
 

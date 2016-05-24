@@ -2,8 +2,9 @@ package com.crazykid080.main.threads;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.userControl.Core;
+
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class ProcessTimer implements Runnable{
 

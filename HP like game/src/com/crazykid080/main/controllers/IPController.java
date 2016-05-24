@@ -3,9 +3,10 @@ package com.crazykid080.main.controllers;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
+
+import crazykid080.main.adminControls.ConsoleControl;
 
 public class IPController {
 	public static ArrayList<Object> IPs = new ArrayList<>();

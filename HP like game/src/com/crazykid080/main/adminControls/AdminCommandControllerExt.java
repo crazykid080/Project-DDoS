@@ -8,7 +8,11 @@ import com.crazykid080.main.processes.ProcessTypes;
 import com.crazykid080.main.userControl.Core;
 import com.crazykid080.main.userControl.Server;
 
-public class AdminCommandController{
+import crazykid080.main.adminControls.AdminCommandController;
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
+
+public class AdminCommandControllerExt extends AdminCommandController{
 
 	protected static String commandList = "edit [faction] treasury {add,set,remove}"
 			+ " [amount]"
@@ -27,6 +31,7 @@ public class AdminCommandController{
 			+ "[process version]";
 	protected static String serverCommands = "server get {files,processes,drivers} [IP address]"
 			+ "\nserver get ip all";
+
 
 	public static void runCommand(String command){		
 
