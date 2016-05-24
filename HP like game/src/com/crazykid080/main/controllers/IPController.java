@@ -10,7 +10,7 @@ import com.crazykid080.main.userControl.Server;
 public class IPController {
 	public static ArrayList<Object> IPs = new ArrayList<>();
 	protected static String IPName = "";
-	public static String obtainIP(Object hash){
+	synchronized public static String obtainIP(Object hash){
 		boolean added = false;
 		do{
 			Random r = new Random();
@@ -37,7 +37,7 @@ public class IPController {
 		IPs.remove(c);
 	}
 
-	public static boolean checkIP(String ip){
+	synchronized public static boolean checkIP(String ip){
 		for (Object object : IPs) {
 			if(object.getClass().toString().equalsIgnoreCase("Server")){
 				String usedIP = ((Server)object).getIPAddress();
@@ -54,7 +54,7 @@ public class IPController {
 		return true;
 	}
 	@SuppressWarnings("rawtypes")
-	public static ArrayList<String> getIPAddresses(){
+	synchronized public static ArrayList<String> getIPAddresses(){
 		ArrayList<String> e = new ArrayList<>();
 		for (Object object : IPs) {
 			Class a = object.getClass();
@@ -71,7 +71,7 @@ public class IPController {
 		return e;
 	}
 
-	public static ArrayList<Object> getServers(){
+	synchronized public static ArrayList<Object> getServers(){
 		return IPs;
 	}
 

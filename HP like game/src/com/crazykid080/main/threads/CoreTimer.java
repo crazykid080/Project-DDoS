@@ -1,13 +1,14 @@
 package com.crazykid080.main.threads;
 
+import java.awt.List;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import com.crazykid080.main.userControl.Core;
 
 public class CoreTimer implements Runnable{
 
 	private long timeLeft = 0;
-	@SuppressWarnings("unused")
 	private long timeMax = 0;
 
 	ArrayList<Object> CoreList = new ArrayList<Object>();
@@ -36,7 +37,7 @@ public class CoreTimer implements Runnable{
 		//obj.add(o);
 	}
 
-	public void addCore(Core obj){
+	synchronized public void addCore(Core obj){
 
 		CoreList.add(obj);
 
@@ -45,16 +46,20 @@ public class CoreTimer implements Runnable{
 	@Override
 	public synchronized void run(){
 		timeLeft = timeMax;
+		ArrayList<Object> temp = CoreList;
 		try {
 			this.wait(timeLeft);
 		} catch (InterruptedException e) {
-			
+
 			e.printStackTrace();
 		}
 
-		for (Object object : CoreList) {
+
+		for (Object object : temp) {
 			((Core)object).onProcessComplete();
 		}
+		int i = 0;
+
 
 	}
 

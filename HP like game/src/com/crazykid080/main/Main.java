@@ -13,7 +13,7 @@ public class Main {
 	static CoreTimer timer = null;
 
 	@SuppressWarnings("unused")
-	public static void main(String[] args) {
+	synchronized public static void main(String[] args) {
 		AdminConsole bleh = new AdminConsole();
 		Server serverMain = new Server(1);
 		timer = new CoreTimer(10);
@@ -26,7 +26,7 @@ public class Main {
 
 	}
 	
-	public static CoreTimer getCoreTimer(){
+	synchronized public static CoreTimer getCoreTimer(){
 		return timer;
 	}
 	

@@ -38,9 +38,9 @@ public class Core extends Server{
 	}
 	
 	@SuppressWarnings("unused")
-	public void onProcessComplete(){
+	synchronized public void onProcessComplete(){
 		ConsoleControl.write("Triggered", LogLevels.Info);
-		//Core core = new Core(this);
+		Core core = new Core(this);
 	}
 
 }
