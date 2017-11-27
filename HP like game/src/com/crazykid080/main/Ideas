@@ -35,13 +35,13 @@ Server{
 		One point every ???
 		(Should there be software to manage burnout? If so, what rate/effectivity?)
 	}
+	-----
 	Hardware Stats{
 		Memory
 		CPU
 		Bandwidth
 		HDD Space
 	}
-
 	-----
 	Startup(Make tasks run on startup (VIRUSES ARE AUTOMATICALLY ADDED)) (Should default protection software
 		be added automatically?)
@@ -49,4 +49,3 @@ Server{
 
 IP addresses (invalid ranges excluded {0.0.0.0, 192.168.*.*, etc.})
 Factions
-
