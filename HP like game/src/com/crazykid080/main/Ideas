@@ -1,0 +1,52 @@
+Ideas:
+Server{
+		Commands{
+				Shutdown{
+					Takes server offline
+					All tasks killed
+					Takes 3-24 hours? (TBD)
+					Requires command to boot
+					Boot time = .5 of reboot time (15-30 min.)
+					Clears burnout
+				}
+				-----
+				Restart{
+					Faster version of shutdown
+					Automatically boots
+					30-60 minutes?
+					Clears burnout
+				}
+				-----
+				Format{
+					Wipes server clean
+					Default software loaded
+					Should this clear burnout?
+				}
+				Change IP{
+					Gets randomized IP address
+					Takes 1 Hour
+					Should this add burnout?
+				}
+		}
+	Burnout(Reduces quality of (Hard/Soft)ware){
+		Max:???
+		Each point degrades preformance by ??? for a maximum degredation of ???
+		Reboot or shutdown resets
+		One point every ???
+		(Should there be software to manage burnout? If so, what rate/effectivity?)
+	}
+	Hardware Stats{
+		Memory
+		CPU
+		Bandwidth
+		HDD Space
+	}
+
+	-----
+	Startup(Make tasks run on startup (VIRUSES ARE AUTOMATICALLY ADDED)) (Should default protection software
+		be added automatically?)
+}
+
+IP addresses (invalid ranges excluded {0.0.0.0, 192.168.*.*, etc.})
+Factions
+
