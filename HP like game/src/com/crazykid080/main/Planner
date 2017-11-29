@@ -1,3 +1,15 @@
+Needs:
+1. Back-end file writing system (For saving) (Should I make my own file set?)
+2. IP controller
+3. Connections
+
+Later needs (DO NOT FOCUS ON YET):
+Money system
+Factions
+In-game file system
+Server commands
+Scanner? (Maybe, not sure if it will happen)
+
 Ideas:
 Server{
 		Commands{
