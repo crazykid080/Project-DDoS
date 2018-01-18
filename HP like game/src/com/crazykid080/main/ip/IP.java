@@ -2,12 +2,15 @@ package com.crazykid080.main.ip;
 
 import java.util.Random;
 
+import crazykid080.main.adminControls.ConsoleControl;
+import crazykid080.main.adminControls.LogLevels;
+
 public class IP {
 	
 	protected static String IPName = "ERROR";
 	synchronized public static String obtainIP(){
 		do{
-			System.out.println("Generating IP...");
+			ConsoleControl.write("Generating IP...",LogLevels.Info);
 			Random r = new Random();
 			/*int oct1 = r.nextInt(256);
 			int oct2 = r.nextInt(256);
