@@ -1,9 +1,10 @@
 Needs:
-1. Back-end file writing system (For saving) (Should I make my own file set?)
 2. IP controller
+2. Servers
 3. Connections
 
 Later needs (DO NOT FOCUS ON YET):
+Back-end file writing system (For saving) (Should I make my own file set?)
 Money system
 Factions
 In-game file system
@@ -14,6 +15,7 @@ Leaderboards
 Server hardware
 Software Versions
 Research
+Subclassing Servers to different types (Player, group, faction, etc)?
 
 Ideas:
 Server{
@@ -25,6 +27,7 @@ Server{
 					Requires command to boot
 					Boot time = .5 of reboot time (15-30 min.)
 					Clears burnout
+					Auto-complete, cannot be delayed.
 				}
 				-----
 				Restart{
@@ -51,6 +54,7 @@ Server{
 		Reboot or shutdown resets
 		One point every ???
 		(Should there be software to manage burnout? If so, what rate/effectivity?)
+		Should harware burnout and software burnout be separate?
 	}
 	-----
 	Hardware Stats{

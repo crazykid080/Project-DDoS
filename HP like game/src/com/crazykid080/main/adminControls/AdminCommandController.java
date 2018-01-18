@@ -12,7 +12,7 @@ public class AdminCommandController{
 	/**
 	 * @author crazykid080
 	 * @since 0.0.1
-	 * @param command the text from the console.
+	 * @param command The text from the console.
 	 */
 	public static void runCommand(String command){		
 		if(command.contains("exit")){
