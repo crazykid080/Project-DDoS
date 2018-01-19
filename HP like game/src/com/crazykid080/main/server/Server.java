@@ -36,4 +36,7 @@ public class Server {
 		String tmp = IP.obtainIP();
 		CurrentIP = tmp;
 	}
+	public String getIP() {
+		return CurrentIP;
+	} 
 }
