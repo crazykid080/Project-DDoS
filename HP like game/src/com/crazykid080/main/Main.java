@@ -10,16 +10,16 @@ import com.crazykid080.main.adminControls.ConsoleControl;
 import com.crazykid080.main.adminControls.LogLevels;
 
 public class Main {
-	
+
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		AdminConsole MainConsole = new AdminConsole();
 		Server X = new Server("127.0.0.1");
-		Server Y = new Server();
-
+		
 		ArrayList<String> x = IPList.getRegisteredIPs();
-
-		System.out.println(x);
+		for (String string : x) {
+			ConsoleControl.write(string, LogLevels.Info);
+		}
 	}
 
 	public static void notAdded(){
