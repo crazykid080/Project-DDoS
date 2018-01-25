@@ -2,28 +2,28 @@ package com.crazykid080.main;
 
 import java.util.ArrayList;
 
-import com.crazykid080.main.adminControls.AdminConsole;
+import com.crazykid080.main.adminControls.AdminConsoleExt;
 import com.crazykid080.main.ip.IPList;
 import com.crazykid080.main.server.Server;
 
-import com.crazykid080.main.adminControls.ConsoleControl;
-import com.crazykid080.main.adminControls.LogLevels;
+import com.crazykid080.main.adminControls.ConsoleControlExt;
+import com.crazykid080.main.adminControls.LogLevelsExt;
 
 public class Main {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		AdminConsole MainConsole = new AdminConsole();
+		AdminConsoleExt MainConsole = new AdminConsoleExt();
 		Server X = new Server("127.0.0.1");
 		
 		ArrayList<String> x = IPList.getRegisteredIPs();
 		for (String string : x) {
-			ConsoleControl.write(string, LogLevels.Info);
+			ConsoleControlExt.write(string, LogLevelsExt.Info);
 		}
 	}
 
 	public static void notAdded(){
-		ConsoleControl.write("This is something that hasn't been implemented, sorry!", LogLevels.Warning);
+		ConsoleControlExt.write("This is something that hasn't been implemented, sorry!", LogLevelsExt.Warning);
 	}
 
 }

@@ -17,7 +17,7 @@ public class ServerList {
 		return null;
 	}
 	
-	public static Server finyServerbyName(String name) { //FOR THE FUTURE
+	public static Server findServerbyName(String name) { //FOR THE FUTURE
 		//NOTE: IF i implement multiple servers this will be an issue
 		return null;
 	}

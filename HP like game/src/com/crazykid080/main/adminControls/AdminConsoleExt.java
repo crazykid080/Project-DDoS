@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 
 @SuppressWarnings("serial")
-public class AdminConsole extends JFrame {
+public class AdminConsoleExt extends JFrame {
 	private String consoleOut = "";
 	private String consoleIn = "";
 	private JPanel panel1 = new JPanel();
@@ -29,7 +29,7 @@ public class AdminConsole extends JFrame {
 	 * This is how you create a new console.
 	 * 
 	 */
-	public AdminConsole(){
+	public AdminConsoleExt(){
 
 		this.setTitle("Admin Console");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -93,10 +93,10 @@ public class AdminConsole extends JFrame {
 		//Dimension d = new Dimension(400, 400);
 		this.setPreferredSize(test);
 
-		ConsoleControl.registerConsole(this);
+		ConsoleControlExt.registerConsole(this);
 
 		this.pack();
-		ConsoleControl.write("Console initialized.", LogLevels.Info);
+		ConsoleControlExt.write("Console initialized.", LogLevelsExt.Info);
 	}
 
 	private void buttonClearClick() {
@@ -106,7 +106,7 @@ public class AdminConsole extends JFrame {
 	private void buttonDoneClick() {
 		consoleIn = field1.getText();
 		write(consoleIn);
-		AdminCommandController.runCommand(consoleIn);
+		AdminCommandControllerExt.runCommand(consoleIn);
 		field1.setText("");
 	}
 
@@ -128,7 +128,7 @@ public class AdminConsole extends JFrame {
 	 * @param text The message you wish to send
 	 * @param type The alert level the message will be.
 	 */
-	public void write(String text, LogLevels type){
+	public void write(String text, LogLevelsExt type){
 		String level = "ISSUE!!!";
 		switch(type){
 		case Info:

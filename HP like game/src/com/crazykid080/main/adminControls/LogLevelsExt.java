@@ -7,7 +7,7 @@ package com.crazykid080.main.adminControls;
  * The log name should be self-explanatory.
  * Can be extended.
  */
-public enum LogLevels {
+public enum LogLevelsExt {
 	Info,
 	Warning,
 	Error,

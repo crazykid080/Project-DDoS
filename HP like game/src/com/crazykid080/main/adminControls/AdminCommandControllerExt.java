@@ -7,7 +7,7 @@ import crazykid080.main.adminControls.ConsoleControl;
  * @since 0.0.1
  * THIS SHOULD BE EXTENDED!
  */
-public class AdminCommandController{
+public class AdminCommandControllerExt{
 
 	/**
 	 * @author crazykid080

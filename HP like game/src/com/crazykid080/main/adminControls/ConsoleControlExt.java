@@ -2,7 +2,7 @@ package com.crazykid080.main.adminControls;
 
 import java.util.ArrayList;
 
-public class ConsoleControl{
+public class ConsoleControlExt{
 	protected static ArrayList<Object> consoles = new ArrayList<>();
 
 	public static void registerConsole(Object hash){
@@ -15,17 +15,17 @@ public class ConsoleControl{
 	public static void write(String text){
 		System.out.println(text);
 		for (Object object : consoles) {
-			((AdminConsole)object).write(text);
+			((AdminConsoleExt)object).write(text);
 		}
 	}
-	public static void write(String text, LogLevels level){
+	public static void write(String text, LogLevelsExt level){
 		System.out.println(text);
 		for (Object object : consoles) {
-			((AdminConsole)object).write(text , level);
+			((AdminConsoleExt)object).write(text , level);
 		}
 	}
 
-	public static void createError(String text, LogLevels level, String className){
+	public static void createError(String text, LogLevelsExt level, String className){
 		String fullError = "ERROR ( "+ className + " )" + text;
 		write(fullError, level);
 	}
@@ -34,7 +34,7 @@ public class ConsoleControl{
 		System.out.println(i);
 		String a = String.valueOf(i);
 		for (Object object : consoles) {
-			((AdminConsole)object).write(a);
+			((AdminConsoleExt)object).write(a);
 		}
 	}
 
